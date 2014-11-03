@@ -92,7 +92,7 @@ var options = {
 /**
  *  Deploy to gh-pages
  */
-gulp.task("deploy", ["cname"], function () {
+gulp.task("deploy", function () {
 
     // Remove temp folder created by gulp-gh-pages
     if (argv.clean) {
