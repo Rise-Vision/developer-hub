@@ -1,0 +1,34 @@
+{
+  "name": "developer-hub",
+  "version": "1.0.0",
+  "ignore": [
+    "**/*.txt",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "jquery": "~1.11.1",
+    "rv-common-style": "https://github.com/Rise-Vision/common-style.git",
+    "rise-vision-common-header": "https://github.com/Rise-Vision/common-header.git",
+    "angular-ui-router": "0.2.11",
+    "angular-local-storage": "0.0.7",
+    "angular-translate": "2.4.1",
+    "angular-bootstrap": "~0.11.0"
+  },
+  "devDependencies": {
+      "JSONedit": "~0.1.0"
+  },
+  "resolutions": {
+    "jquery": "~1.11.1"
+  },
+  "homepage": "https://github.com/Rise-Vision/developer-hub",
+  "authors": [
+    "rodrigopavezi <rodrigopavezi@gmail.com>"
+  ],
+  "description": "RiseVision Developer Hub",
+  "license": "GNU"
+}

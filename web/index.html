@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="risevision.developer.hub">
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- *** Developer Meta *** -->
+    <!-- Place this data between the <head> tags of your website -->
+    <title>Rise Vision Developer Console | Digital signage developer resources</title>
+    <meta name="description" content="The Rise Vision Developer Console is a resource to help developers build applications and widgets with Rise Vision's APIs and open source code" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Rise Vision Developer Console">
+    <meta itemprop="description" content="The Rise Vision Developer Console is a resource to help developers build applications and widgets with Rise Vision's APIs and open source code">
+    <meta itemprop="image" content="https://s3.amazonaws.com/Store-Products/Meta/developer.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@RiseVision">
+    <meta name="twitter:title" content="Rise Vision Developer Console">
+    <meta name="twitter:description" content="The Rise Vision Developer Console is a resource to help developers build applications and widgets with Rise Vision's APIs and open source code">
+    <meta name="twitter:image:src" content="https://s3.amazonaws.com/Store-Products/Meta/developer.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Rise Vision Developer Console" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://developer.risevision.com/" />
+    <meta property="og:image" content="https://s3.amazonaws.com/Store-Products/Meta/developer.png" />
+    <meta property="og:description" content="The Rise Vision Developer Console is a resource to help developers build applications and widgets with Rise Vision's APIs and open source code" />
+
+    <!--link rel="stylesheet" href=/web/css/main.css"-->
+    <link rel="stylesheet" href="components/rv-common-style/dist/css/rise.min.css">
+
+</head>
+<body>
+    <common-header nav-options="navOptions" ng-controller="CommonHeaderNavbarCtrl"></common-header>
+
+    <div class="container-fluid">
+        <div ui-view></div>
+    </div>
+
+
+    <script src="components/rise-vision-common-header/dist/js/components.js"></script>
+    <script src="components/rise-vision-common-header/dist/js/common-header.js"></script>
+    <script src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="components/angular-local-storage/angular-local-storage.js"></script>
+    <script src="components/JSONedit/js/JSONEdit.js"></script>
+    <script src="components/angular-translate/angular-translate.js"></script>
+    <script src="components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <!-- Developer hub angular modules -->
+    <script src="components/ng-core-api-client/src/js/svc-app.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/route.js"></script>
+    <script src="scripts/controllers/ctr-common-header-navbar.js"></script>
+    <script src="scripts/controllers/ctr-app-main.js"></script>
+    <script src="scripts/controllers/ctr-app-management.js"></script>
+    <script src="scripts/controllers/ctr-add-app.js"></script>
+    <script src="scripts/controllers/ctr-edit-app.js"></script>
+
+    </body>
+</html>
