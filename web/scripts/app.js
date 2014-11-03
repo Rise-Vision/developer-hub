@@ -1,5 +1,5 @@
 "use strict";
-angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app", "ui.bootstrap"])
+angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app", "ui.bootstrap", "risevision.common.loading"])
     .config(["uiStatusDependencies", function (uiStatusDependencies) {
         uiStatusDependencies.addDependencies({
             "hasManagementRoles": "registerdAsRiseVisionUser",
@@ -62,8 +62,8 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'APP_REGISTRATION_DOCUMENTATION_LINK': 'How to register an Application',
             'RISE_VISION_STORE_LINK': 'Rise Vision Store',
             'REGISTER_AS_A_DEVELOPER_TITLE': 'Register as a Developer',
-            'LOGIN_TO_REGISTER_TEXT': 'Sign in to your Rise Vision account to register',
-            'LOGIN_WITH_GOOGLE_BUTTON': 'Sign in with Google',
+            'LOGIN_TO_REGISTER_TEXT': 'You need to sign in to your Rise Vision account to register an app',
+            'LOGIN_WITH_GOOGLE_BUTTON': 'Sign in With Google',
             'DO_NOT_HAVE_ACCOUNT_LINK': "I don't have an account",
             'DO_NOT_HAVE_PERMISSION': "You must have permission to register apps. Please contact your System Administrator.",
             'GET_INVOLVED': 'Get Involved',

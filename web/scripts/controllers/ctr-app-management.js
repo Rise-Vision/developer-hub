@@ -4,9 +4,11 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("AppManagementController",
-    ["$scope", "$state","listApps", "userState", "deleteApp", function($scope, $state, listApps, userState, deleteApp){
+    ["$scope", "$state","listApps", "userState", "deleteApp", "$loading", function($scope, $state, listApps, userState, deleteApp, $loading){
         $scope.apps = [];
         $scope.showNoAppMessage = true;
+        $scope.loadingComplete = false;
+
         var toogleMessageAndTable = function(){
             if($scope.apps != null && $scope.apps.length > 0){
                 $scope.showNoAppMessage = false;
@@ -15,23 +17,27 @@ angular.module("risevision.developer.hub")
                 $scope.showNoAppMessage = true;
                 $scope.showAppTable = false;
             }
-        }
+        };
 
-        listApps(userState.getUserCompanyId()).then(function (apps) {
-            $scope.apps = apps;
+        var loadApps = listApps(userState.getUserCompanyId())
+            .then(function (apps) {
+                $scope.apps = apps;
+                $scope.loadingComplete = true;
+                toogleMessageAndTable();
+            }, function() {
+                $scope.loadingComplete = true;
+            });
 
-            toogleMessageAndTable();
-        });
+        $loading.stopSpinnerAfterPromise("rv-dev-hub-apps-loader", loadApps);
 
 
         $scope.addNewApp = function() {
             $state.go("apps.add");
-
-        }
+        };
 
         $scope.editApp = function(id) {
             $state.go("apps.edit", {id: id});
-        }
+        };
 
         $scope.deleteApp = function(id) {
             deleteApp(id).then(function(result) {
@@ -39,5 +45,5 @@ angular.module("risevision.developer.hub")
 
                 toogleMessageAndTable();
             });
-        }
+        };
     }]);
