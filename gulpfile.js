@@ -13,8 +13,8 @@ var del         = require('delete');
 var deploy      = require('gulp-gh-pages');
 var argv        = require('minimist')(process.argv.slice(2));
 var rename      = require("gulp-rename");
-var karma       = require('karma').server;
-var gp          = require("gulp-protractor");
+var factory     = require("widget-tester").gulpTaskFactory;
+var runSequence = require("run-sequence");
 
 
 //------------------------- Browser Sync --------------------------------
@@ -67,6 +67,18 @@ gulp.task('watch', function () {
     gulp.watch(['web/**/*'], ['browser-sync-reload']);
 });
 
+//-------------------------- Test ----------------------------------
+gulp.task("server", factory.testServer());
+gulp.task("server-close", factory.testServerClose());
+gulp.task("test:webdrive_update", factory.webdriveUpdate());
+gulp.task("test:e2e:core", ["test:webdrive_update"], factory.testE2EAngular({
+    browser: "chrome"
+}));
+gulp.task("test:e2e", function (cb) {
+    runSequence("server", "test:e2e:core", "server-close", cb);
+});
+
+
 //------------------------- Deployment --------------------------------
 var options = {
             prod: {
@@ -95,35 +107,6 @@ gulp.task("deploy", ["cname"], function () {
         .pipe(deploy(options[env]));
 });
 
-
-/**
- * Run test once and exit
- */
-gulp.task('test', function (done) {
-    karma.start({
-        configFile: __dirname + '/karma.conf.js',
-        singleRun: true
-    }, done);
-});
-
-// Downloads the selenium webdriver
-gulp.task('webdriver_update', ['browser-sync'], gp.webdriver_update);
-
-// Setting up the test task
-gulp.task('protractor', ['webdriver_update','browser-sync'], function(cb) {
-    gulp.src(['./tests/e2e/**/*.js']).pipe(gp.protractor({
-        configFile: 'protractor.conf.js'
-    })).on('error', function(e) {
-        browserSync.exit();
-        console.log(e);
-        cb();
-    }).on('end', function() {
-        browserSync.exit();
-        cb();
-    });
-});
-
-gulp.task('e2e-test', ['browser-sync','protractor']);
 
 /**
  * Copy and rename CNAME file depending on the target environment
