@@ -17,13 +17,15 @@
     "angular-ui-router": "0.2.11",
     "angular-local-storage": "0.0.7",
     "angular-translate": "2.4.1",
-    "angular-bootstrap": "~0.11.0"
+    "angular-bootstrap": "~0.11.0",
+    "rv-loading": "https://github.com/Rise-Vision/rv-loading.git"
   },
   "devDependencies": {
-      "JSONedit": "~0.1.0"
+    "JSONedit": "~0.1.0"
   },
   "resolutions": {
-    "jquery": "~1.11.1"
+    "jquery": "~1.11.1",
+    "angular": "1.2.26"
   },
   "homepage": "https://github.com/Rise-Vision/developer-hub",
   "authors": [
