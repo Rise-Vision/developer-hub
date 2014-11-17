@@ -3,15 +3,10 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
     .config(["uiStatusDependencies", function (uiStatusDependencies) {
         uiStatusDependencies.addDependencies({
             "hasManagementRoles": "registerdAsRiseVisionUser",
-            "canManageApps": "hasManagementRoles"
+            "canAddApps": "hasManagementRoles",
+            "canEditApps": "hasManagementRoles",
+            "canAccessList": ""
         });
-    }])
-    .factory("canManageApps", ["$q", function ($q) {
-        return function () {
-            var deferred = $q.defer();
-            deferred.resolve(true);
-            return deferred.promise;
-        };
     }])
     .factory("hasManagementRoles", ["$q", "getUserProfile", "userState", "$log", function ($q, getUserProfile, userState, $log) {
         return function () {
@@ -20,22 +15,23 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
                 var USER_ADMINISTRATOR = "ua";
                 var DEVELOPER = "de";
                 var roles = profile.roles;
+                var hasRole = false;
+
                 for (var i = 0; i < roles.length; i++){
                     if(roles[i] === USER_ADMINISTRATOR || roles[i] === DEVELOPER){
-                        deferred.resolve(true);
+                        hasRole = true;
                     }
                 }
-                $log.debug("hasManagementRoles rejected as user does not have necessary role");
-                deferred.reject("hasManagementRoles");
+                if(hasRole){
+                    deferred.resolve(true);
+                }else{
+                    $log.debug("hasManagementRoles rejected as user does not have necessary role");
+                    deferred.reject("hasManagementRoles");
+                }
             });
             return deferred.promise;
         };
     }])
-    /*.config([
-        "$interpolateProvider", function($interpolateProvider) {
-            return $interpolateProvider.startSymbol("{(").endSymbol(")}");
-        }
-    ])*/
     .config(['$translateProvider', function ($translateProvider) {
         $translateProvider.translations('en', {
             'RV_DEVELOPER_HUB': 'Rise Vision Developer Hub',

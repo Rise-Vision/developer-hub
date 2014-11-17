@@ -55,27 +55,8 @@
             <i ng-if="sortByCat == 'modified'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
         </div>
     </div>
-    <!-- Sample App -->
-    <a class="tr-row" href="#/edit/123345677">
-
-        <div class="col-lg-2 col-xs-2 highlight">
-            My First App
-        </div>
-        <div class="col-lg-4 col-xs-4">
-            This is sample description text
-        </div>
-        <div class="col-lg-2 col-xs-2">
-            123345677
-        </div>
-        <div class="col-lg-2 col-xs-2">
-            urldomain.com
-        </div>
-        <div class="col-lg-2 col-xs-2">
-            27 Oct 2014 17:21
-        </div>
-    </a>
     <!-- Apps -->
-    <a href="#/edit/{{app.id}}" class="tr-row" ng-repeat="app in apps | orderBy:sortByCat:sortReverse">
+    <a ng-click="editApp(app.id)" class="tr-row" ng-repeat="app in apps | orderBy:sortByCat:sortReverse" style="cursor: pointer; cursor: hand;">
 
         <div class="col-lg-2 col-xs-2 highlight">
             {{ app.name }}
