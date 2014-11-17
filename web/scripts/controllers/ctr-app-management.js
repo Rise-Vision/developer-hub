@@ -6,8 +6,6 @@ angular.module("risevision.developer.hub")
     .controller("AppManagementController",
     ["$scope", "$state","listApps", "userState", "deleteApp", "$loading", "uiFlowManager", function($scope, $state, listApps, userState, deleteApp, $loading, uiFlowManager){
 
-        uiFlowManager.invalidateStatus("canAccessList");
-
         $scope.apps = [];
         $scope.showNoAppMessage = true;
         $scope.loadingComplete = false;
@@ -31,12 +29,18 @@ angular.module("risevision.developer.hub")
             function (newStatus){
                 if(newStatus) {
                     console.log("Status: "+ newStatus)
+
                     if(newStatus === "hasManagementRoles") {
+                        console.log("HERE");
+                        uiFlowManager.cancelValidation();
+                        uiFlowManager.invalidateStatus("canAccessList");
                         $state.go("apps.withoutPermission");
                     }else if (newStatus === "canAddApps"){
+                        uiFlowManager.invalidateStatus("canAccessList");
                         $state.go("apps.add");
                     }else if (newStatus === "canEditApps"){
-                        $state.go("apps.edit", {id: _id});
+                        uiFlowManager.invalidateStatus("canAccessList");
+                       $state.go("apps.edit", {id: _id});
                     }
 
                     var loadApps = listApps(userState.getUserCompanyId())
