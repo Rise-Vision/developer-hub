@@ -1,8 +1,5 @@
 <div class="app-header add-bottom">
     <div class="app-title">
-        <a class="app-title-links" href="#/apps">
-            <i class="fa fa-home"></i> Developer
-        </a>
         <h1>{{'APP_REGISTRATION' | translate}}</h1>
     </div>
 </div>
@@ -28,7 +25,7 @@
             <!-- url -->
             <div class="form-group">
                 <label for="appUrlField" id="appUrlLabel">{{'APP_URL' | translate}}</label>
-                <input type="appUrlField" class="form-control" id="url" ng-model="app.url">
+                <input type="text" class="form-control" id="appUrlField" ng-model="app.url">
             </div>
             <!-- Cancel -->
             <a href="#/list" class="btn btn-default btn-fixed-width">
