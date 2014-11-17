@@ -6,12 +6,14 @@
 angular.module("risevision.developer.hub")
     .config (["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 
+        $urlRouterProvider.otherwise("/apps/list");
+
         $stateProvider
             .state('apps', {
                 template: "<div ui-view></div>",
                 abstract: true
             })
-            .state('apps.main', {
+            /*.state('apps.main', {
                 url: '/apps',
                 templateUrl: 'partials/apps/apps.html',
                 controller: 'MainAppController'
@@ -20,23 +22,23 @@ angular.module("risevision.developer.hub")
                 url: '/userSignin',
                 templateUrl: 'partials/apps/apps.userSignin.html',
                 controller: 'MainAppController'
-            })
+            })*/
             .state('apps.withoutPermission', {
-                url: '/userSignin',
+                url: '/apps/userWithoutPermission',
                 templateUrl: 'partials/apps/apps.withoutPermission.html'
             })
             .state('apps.list', {
-                url: '/list',
+                url: '/apps/list',
                 templateUrl: 'partials/apps/apps.list.html',
                 controller: 'AppManagementController'
             })
             .state('apps.add', {
-                url: '/add',
+                url: '/apps/add',
                 templateUrl: 'partials/apps/app-form.html',
                 controller: 'AddAppController'
             })
             .state('apps.edit', {
-                url: '/edit/:id',
+                url: '/apps/edit/:id',
                 templateUrl: 'partials/apps/app-edit.html',
                 controller: 'EditAppController'
             })

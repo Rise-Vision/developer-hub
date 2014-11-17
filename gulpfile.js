@@ -55,7 +55,7 @@ gulp.task('bower-clean-cache', function(){
  *  Remove all bower dependencies
  */
 gulp.task('bower-rm', function(){
-    return del.sync('assets/components');
+    return del.sync('web/components');
 });
 
 //------------------------- Watch --------------------------------
