@@ -4,7 +4,7 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("AppManagementController",
-    ["$scope", "$state","listApps", "userState", "deleteApp", "$loading", "uiFlowManager", function($scope, $state, listApps, userState, deleteApp, $loading, uiFlowManager){
+    ["$scope", "$state","listApps", "userState", "$loading", "uiFlowManager", function($scope, $state, listApps, userState, $loading, uiFlowManager){
 
         $scope.apps = [];
         $scope.showNoAppMessage = true;
