@@ -70,7 +70,10 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'STYLE_GUIDE': 'Style Guide',
             'API_EXPLORER': 'API Explorer',
             'RV_CODEBASE': 'Rise Vision Codebase',
-            'DEVELOPER_DOCS': 'Developer Documentation'
+            'DEVELOPER_DOCS': 'Developer Documentation',
+            'NAME_REQUIRED_ERROR': 'Name is required',
+            'WRONG_CLIENT_ID_FORMAT': 'Wrong Client Id Format',
+            'WRONG_URL_FORMAT': 'Wrong Url Format'
         });
 
 

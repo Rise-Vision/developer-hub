@@ -1,0 +1,16 @@
+.css-form input.ng-invalid.ng-dirty {
+    border-color:#a94442;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075)
+}
+
+.css-form input.ng-invalid.ng-dirty:focus {
+    border-color:#843534;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483
+}
+
+
+.validation-error-message {
+    color: #a94442;
+}
