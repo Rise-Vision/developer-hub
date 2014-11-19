@@ -25,7 +25,20 @@ angular.module("risevision.developer.hub")
             uiFlowManager.invalidateStatus("canAddApps");
         };
 
-       $scope.$watch(function () { return uiFlowManager.getStatus(); },
+        var getApps = function(selectedCompanyId) {
+            var listAppsResult = listApps(selectedCompanyId)
+                .then(function (apps) {
+                    $scope.apps = apps;
+                    $scope.loadingComplete = true;
+                    toogleMessageAndTable();
+                }, function () {
+                    $scope.loadingComplete = true;
+                });
+
+            $loading.stopSpinnerAfterPromise("rv-dev-hub-apps-loader", listAppsResult);
+        }
+
+        $scope.$watch(function () { return uiFlowManager.getStatus(); },
             function (newStatus){
                 if(newStatus) {
                     console.log("Status: "+ newStatus)
@@ -42,18 +55,12 @@ angular.module("risevision.developer.hub")
                         uiFlowManager.invalidateStatus("canAccessList");
                        $state.go("apps.edit", {id: _id});
                     }
-
-                    var loadApps = listApps(userState.getUserCompanyId())
-                        .then(function (apps) {
-                            $scope.apps = apps;
-                            $scope.loadingComplete = true;
-                            toogleMessageAndTable();
-                        }, function() {
-                            $scope.loadingComplete = true;
-                        });
-
-                    $loading.stopSpinnerAfterPromise("rv-dev-hub-apps-loader", loadApps);
                 }
+            });
+
+        $scope.$watch(function () { return userState.getSelectedCompanyId(); },
+            function (selectedCompanyId) {
+                getApps(selectedCompanyId);
             });
 
         $scope.editApp = function(id) {

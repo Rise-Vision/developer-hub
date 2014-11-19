@@ -30,4 +30,13 @@ angular.module("risevision.developer.hub")
             });
         };
 
+        var previousSelectedCompanyId = userState.getSelectedCompanyId();
+
+        $scope.$watch(function () { return userState.getSelectedCompanyId(); },
+            function (selectedCompanyId) {
+                if(previousSelectedCompanyId !== selectedCompanyId){
+                    $state.go("apps.list");
+                }
+            });
+
     }])

@@ -14,7 +14,7 @@ angular.module("risevision.developer.hub")
         };
 
         $scope.save = function(app) {
-            createApp(userState.getUserCompanyId(), userState.getUsername(), app).then(function(result) {
+            createApp(userState.getSelectedCompanyId(), userState.getUsername(), app).then(function(result) {
                 $state.go("apps.list");
 
             }, function(errorResult) {
