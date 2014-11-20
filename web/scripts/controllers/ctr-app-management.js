@@ -31,11 +31,24 @@ angular.module("risevision.developer.hub")
                     $scope.apps = apps;
                     $scope.loadingComplete = true;
                     toogleMessageAndTable();
+                    parseDate();
                 }, function () {
                     $scope.loadingComplete = true;
                 });
 
+
+
             $loading.stopSpinnerAfterPromise("rv-dev-hub-apps-loader", listAppsResult);
+        }
+
+        // Parse date so angular can format it.
+        var parseDate = function() {
+            for(var key in $scope.apps){
+                var app = $scope.apps[key];
+                if(app.changeDate){
+                    app.changeDate = Date.parse(app.changeDate);
+                }
+            }
         }
 
         $scope.$watch(function () { return uiFlowManager.getStatus(); },
