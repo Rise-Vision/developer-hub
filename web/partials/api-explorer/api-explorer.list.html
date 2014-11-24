@@ -1,0 +1,42 @@
+<div class="responsive-table">
+    <!-- Title Row -->
+    <div class="title-row">
+
+        <div class="col-lg-3 col-xs-3" ng-click="sortBy('name')">
+            {{'RESOURCE_NAME' | translate}}
+            <i ng-if="sortByCat == 'name'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
+        </div>
+        <div class="col-lg-4 col-xs-4" ng-click="sortBy('description')">
+            {{'RESOURCE_DESCRIPTION' | translate}}
+            <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
+        </div>
+        <div class="col-lg-2 col-xs-2" ng-click="sortBy('method')">
+            {{'RESOURCE_METHOD' | translate}}
+            <i ng-if="sortByCat == 'method'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
+        </div>
+        <div class="col-lg-3 col-xs-3" ng-click="sortBy('documentation')">
+            {{'RESOURCE_DOCUMENTATION_LINK' | translate}}
+            <i ng-if="sortByCat == 'documentation'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
+        </div>
+
+    </div>
+    <!-- Apps -->
+    <div ng-repeat="resource in resources" class="tr-row">
+        <div ng-click="explore(method.id)" class="tr-row" ng-repeat="method in resource.methods" style="cursor: pointer; cursor: hand;">
+
+            <div class="col-lg-3 col-xs-3 highlight">
+                {{ method.id }}
+            </div>
+            <div class="col-lg-4 col-xs-4">
+                {{ method.description }}
+            </div>
+            <div class="col-lg-2 col-xs-2">
+                {{ method.httpMethod }}
+            </div>
+            <div class="col-lg-3 col-xs-3">
+                <a ng-href="{{documentationUrl}}{{method.path}}/{{method.id}}">Here</a>
+            </div>
+        </div>
+
+    </div>
+</div>

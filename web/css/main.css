@@ -14,3 +14,10 @@
 .validation-error-message {
     color: #a94442;
 }
+
+.button-like-a-link {
+    background:none!important;
+    border:none;
+    padding:0!important;
+    cursor: pointer;
+}
