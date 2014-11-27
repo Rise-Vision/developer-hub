@@ -4,7 +4,7 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("EditAppController",
-    ["$scope", "$state", "$stateParams", "$timeout", "getApp", "updateApp", "deleteApp", "$log", "$loading",  function($scope,$state, $stateParams, $timeout, getApp, updateApp, deleteApp ,$log, $loading){
+    ["$scope", "$state", "$stateParams", "$timeout", "getApp", "updateApp", "deleteApp", "$log", "$loading", "errorInfo", function($scope,$state, $stateParams, $timeout, getApp, updateApp, deleteApp ,$log, $loading, errorInfo){
 
         var loadApp = getApp($stateParams.id).then(function (app) {
             $scope.app = app;
@@ -16,9 +16,13 @@ angular.module("risevision.developer.hub")
 
             updateApp($stateParams.id,app).then(function(resp){
                 $state.go("apps.list");
-
             }, function(errorResult) {
                 $log.debug("Error: " + errorResult.code + " - " + errorResult.message);
+                if(errorResult.message == "Client Id already exists!"){
+                    $scope.showExistentClientIdMessage = true;
+                }else{
+                    errorInfo(errorResult.message);
+                }
             });
         }
 
@@ -27,6 +31,7 @@ angular.module("risevision.developer.hub")
                 $state.go("apps.list");
             }, function(errorResult) {
                 $log.debug("Error: " + errorResult.code + " - " + errorResult.message);
+                errorInfo(errorResult.message);
             });
         };
 
@@ -38,5 +43,9 @@ angular.module("risevision.developer.hub")
                     $state.go("apps.list");
                 }
             });
+
+        $scope.hideExistentClientIdMessage = function(){
+            $scope.showExistentClientIdMessage = false;
+        }
 
     }])
