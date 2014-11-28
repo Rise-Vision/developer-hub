@@ -73,7 +73,8 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'DEVELOPER_DOCS': 'Developer Documentation',
             'NAME_REQUIRED_ERROR': 'Name is required',
             'WRONG_CLIENT_ID_FORMAT': 'Wrong Client Id Format',
-            'WRONG_URL_FORMAT': 'Wrong Url Format'
+            'WRONG_URL_FORMAT': 'Wrong Url Format',
+            'EXISTENT_CLIENT_ID': 'Client Id already exists.'
         });
 
 

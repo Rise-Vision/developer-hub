@@ -13,16 +13,6 @@ angular.module("risevision.developer.hub")
                 template: "<div ui-view></div>",
                 abstract: true
             })
-            /*.state('apps.main', {
-                url: '/apps',
-                templateUrl: 'partials/apps/apps.html',
-                controller: 'MainAppController'
-            })
-            .state('apps.userSignin', {
-                url: '/userSignin',
-                templateUrl: 'partials/apps/apps.userSignin.html',
-                controller: 'MainAppController'
-            })*/
             .state('apps.withoutPermission', {
                 url: '/apps/userWithoutPermission',
                 templateUrl: 'partials/apps/apps.withoutPermission.html'

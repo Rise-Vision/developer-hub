@@ -27,8 +27,9 @@
             <!-- Client ID -->
             <div class="form-group">
                 <label for="appClientIdField" id="appClientIdLabel">{{'APP_CLIENT_ID' | translate}}</label>
-                <input type="text" class="form-control" id="appClientIdField" name="appClientIdField" ng-model="app.clientId" ng-pattern="/^((?!-)[A-Za-z0-9-]{1,63}(?!-)\.)+[A-Za-z]{2,30}$/i" />
+                <input type="text" class="form-control" id="appClientIdField" name="appClientIdField" ng-model="app.clientId" ng-pattern="/^((?!-)[A-Za-z0-9-]{1,63}(?!-)\.)+[A-Za-z]{2,30}$/i" ng-change="hideExistentClientIdMessage()"/>
                 <span ng-show="form.appClientIdField.$dirty && form.appClientIdField.$error.pattern" class="validation-error-message">{{'WRONG_CLIENT_ID_FORMAT' | translate}}</span>
+                <span ng-show="form.appClientIdField.$dirty && showExistentClientIdMessage" class="validation-error-message">{{'EXISTENT_CLIENT_ID' | translate}}</span>
             </div>
             <!-- url -->
             <div class="form-group">
