@@ -7,11 +7,14 @@ angular.module("risevision.developer.hub")
     ["$rootScope", "$scope", "$state", "$log", "getRest",
         function($rootScope, $scope, $state, $log, getRest){
 
-            var listAppsResult = getRest("core","v0")
+            $scope.documentationUrl = "http://help.risevision.com/#/developer/core-api/"
+
+            var listResourcesResult = getRest("core","v0")
                 .then(function (api) {
                     $rootScope.resources = api.resources;
                 }, function (errorResult) {
                     $log.debug("Error: " + errorResult.code + " - " + errorResult.message);
                 });
 
+            $loading.stopSpinnerAfterPromise("rv-dev-hub-api-explorer-loader", listResourcesResult);
     }]);

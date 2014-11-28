@@ -1,0 +1,37 @@
+
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form role="form" name="form" class="css-form" novalidate>
+            <div ng-repeat="(key, value) in method.parameters">
+                <div class="form-group" >
+                    <label for="{{key}}">{{key}}</label> <span>({{value.type}})</span>
+                    <input class="form-control" id="{{key}}" name="{{key}}" ng-model="requestParameters[key]">
+                </div>
+            </div>
+            <div class="form-group" >
+                <label for="fields">fields</label> <span>(Selector specifying which fields to include in a partial response.)</span>
+                <input class="form-control" id="fields" name="fields" ng-model="requestParameters.fields">
+            </div>
+
+            <!-- Execute -->
+            <button type="button" class="btn btn-success btn-fixed-width pull-right" ng-click="execute(method.id,requestParameters)">
+                {{'EXECUTE_BUTTON' | translate}} <i class="fa fa-white fa-check icon-right"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+<div rv-spinner
+     rv-spinner-key="rv-dev-hub-api-explorer-execute-loader"
+     rv-spinner-start-active="1"
+     rv-spinner-backdrop-class="spinner-backdrop"
+        ng-show="showSpinner"></div>
+
+<div class="row" ng-show="showResponse" id="response">
+    <div><h3>Response</h3></div>
+    <div class="col-md-12">
+        <pre  class="response highlight" ng-bind-html="response"></pre>
+    </div>
+</div>

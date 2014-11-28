@@ -19,8 +19,11 @@ angular.module("risevision.developer.hub")
                 controller: 'ApiExplorerListController'
             })
             .state('api-explorer.explore', {
+                templateUrl: "partials/api-explorer/api-explorer-explore.html"
+            })
+            .state('api-explorer.explore.endpoint', {
                 url: '/api-explorer/:id',
-                templateUrl: function(params){ return "partials/api-explorer/" + params.id + ".html"; },
-                controller: 'ApiExplorerExploreController'
+                templateUrl: "partials/api-explorer/api-explorer-explore-endpoint.html",
+                controller: 'ApiExplorerExploreEndpointController'
             })
     }]);

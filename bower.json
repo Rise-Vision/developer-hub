@@ -14,7 +14,7 @@
     "jquery": "~1.11.1",
     "rv-common-style": "https://github.com/Rise-Vision/common-style.git",
     "rise-vision-common-header": "https://github.com/Rise-Vision/common-header.git",
-    "angular-ui-flow-manager": "https://github.com/rodrigopavezi/angular-ui-flow-manager.git",
+    "angular-ui-flow-manager": "https://github.com/Rise-Vision/angular-ui-flow-manager.git",
     "angular-ui-router": "0.2.11",
     "angular-translate": "2.4.1",
     "angular-bootstrap": "~0.11.0",
@@ -25,7 +25,7 @@
   },
   "resolutions": {
     "jquery": "~1.11.1",
-    "angular": "1.2.26"
+    "angular": "1.2.27"
   },
   "homepage": "https://github.com/Rise-Vision/developer-hub",
   "authors": [
