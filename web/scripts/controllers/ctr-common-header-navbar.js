@@ -13,7 +13,7 @@ angular.module("risevision.developer.hub")
             target: "_blank"
         },{
             title: "Community",
-            link: "http://community.risevision.com",
+            link: "https://community.risevision.com/rise_vision_inc/categories/rise_vision_inc_developers",
             target: "_blank"
         }];
     });
