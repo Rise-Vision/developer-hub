@@ -6,8 +6,8 @@
         <form role="form" name="form" class="css-form" novalidate>
             <div ng-repeat="(key, value) in method.parameters">
                 <div class="form-group" >
-                    <label for="{{key}}">{{key}}</label> <span>({{value.type}})</span>
-                    <input class="form-control" id="{{key}}" name="{{key}}" ng-model="requestParameters[key]">
+                    <label for="{{key}}">{{key}} {{value.required ? '*' : ''}}</label> <span>({{value.type}})</span>
+                    <input class="form-control" id="{{key}}" name="id" ng-model="requestParameters[key]" ng-required="value.required">
                 </div>
             </div>
             <div class="form-group" >
