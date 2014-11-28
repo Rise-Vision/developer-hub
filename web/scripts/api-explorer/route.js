@@ -6,8 +6,6 @@
 angular.module("risevision.developer.hub")
     .config (["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise("/api-explorer/list");
-
         $stateProvider
             .state('api-explorer', {
                 templateUrl: "partials/api-explorer/api-explorer.html",
