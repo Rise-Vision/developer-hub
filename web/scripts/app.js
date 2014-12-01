@@ -47,7 +47,7 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'EDIT_BUTTON': "Edit",
             'APPS': 'Apps',
             'APP_REGISTRATION': 'App Registration',
-            'APP_EDITION': 'App Edition',
+            'APP': 'App',
             'REGISTER_AN_APP': 'Register An App',
             'APP_NO_APP_YET_MESSAGE': "You haven't registered any apps yet",
             'APP_ACTION': 'ACTION',
