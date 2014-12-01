@@ -41,7 +41,7 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'APP_CLIENT_ID': "Client ID",
             'APP_DESCRIPTION': "Description",
             'APP_URL': 'URL',
-            'APP_MODIFIED': 'Date Modified',
+            'APP_MODIFIED': 'Modified',
             'SAVE_BUTTON': "Save",
             'CANCEL_BUTTON': "Cancel",
             'EDIT_BUTTON': "Edit",
