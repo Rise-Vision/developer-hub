@@ -78,8 +78,7 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'RESOURCE_DESCRIPTION': 'Description',
             'RESOURCE_METHOD': 'Method',
             'RESOURCE_DOCUMENTATION_LINK': 'Documentation',
-            'EXECUTE_BUTTON': 'Execute'
-
+            'APPLY_BUTTON': 'Apply'
         });
 
 
