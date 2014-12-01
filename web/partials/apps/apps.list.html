@@ -46,15 +46,15 @@
             {{'APP_DESCRIPTION' | translate}}
             <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
         </div>
-        <div class="col-lg-2 col-xs-2" ng-click="sortBy('clientId')">
+        <div class="col-lg-2 col-xs-2 text-right" ng-click="sortBy('clientId')">
             {{'APP_CLIENT_ID' | translate}}
             <i ng-if="sortByCat == 'clientId'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
         </div>
-        <div class="col-lg-2 col-xs-2" ng-click="sortBy('url')">
+        <div class="col-lg-2 col-xs-2 text-right" ng-click="sortBy('url')">
             {{'APP_URL' | translate}}
             <i ng-if="sortByCat == 'url'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
         </div>
-        <div class="col-lg-2 col-xs-2" ng-click="sortBy('modified')">
+        <div class="col-lg-2 col-xs-2 text-right" ng-click="sortBy('modified')">
             {{'APP_MODIFIED' | translate}}
             <i ng-if="sortByCat == 'modified'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
         </div>
@@ -68,13 +68,13 @@
         <div class="col-lg-4 col-xs-4">
             {{ app.description }}
         </div>
-        <div class="col-lg-2 col-xs-2">
+        <div class="col-lg-2 col-xs-2 text-right">
             {{ app.clientId }}
         </div>
-        <div class="col-lg-2 col-xs-2">
+        <div class="col-lg-2 col-xs-2 text-right">
             {{ app.url }}
         </div>
-        <div class="col-lg-2 col-xs-2">
+        <div class="col-lg-2 col-xs-2 text-right">
             {{ app.changeDate | date :'short'}}
         </div>
     </a>
