@@ -1,7 +1,11 @@
-<div class="breadcrumbContainer">
-    <ol class="breadcrumb">
-        <li><a ui-sref="api-explorer.list">API list</a></li>
-        <li class="active">{{title}} <a ng-href="{{documentationUrl}}{{resourceName}}/{{method.id}}" target="_blank"><span class=" fa fa-info-circle fa-2x"></span></a></li>
-    </ol>
+<div class="row">
+    <div class="col-md-6">
+        <div class="breadcrumbContainer">
+            <ol class="breadcrumb">
+                <li><a ui-sref="api-explorer.list">API list</a></li>
+                <li class="active">{{title}} <a ng-href="{{documentationUrl}}{{resourceName}}/{{method.id}}" target="_blank"><span class=" fa fa-info-circle fa-2x"></span></a></li>
+            </ol>
+        </div>
+    </div>
 </div>
 <div ui-view></div>

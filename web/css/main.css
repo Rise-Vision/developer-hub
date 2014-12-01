@@ -161,7 +161,7 @@
   border-radius: 3px; }
 
 .breadcrumbContainer .breadcrumb {
-  margin-bottom: 0px; }
+  padding-left: 0px; }
 
 #api-explorerPage {
   margin-bottom: 10px; }
