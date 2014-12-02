@@ -4,8 +4,8 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("ApiExplorerListController",
-    ["$rootScope", "$scope", "$state", "$log",
-        function($rootScope, $scope, $state, $log){
+    ["$rootScope", "$scope", "$state", "$log", "$http",
+        function($rootScope, $scope, $state, $log,$http){
             $scope.sortReverse = false;
 
             $scope.sortBy = function(category){
@@ -13,14 +13,24 @@ angular.module("risevision.developer.hub")
                 $scope.sortReverse = !$scope.sortReverse;
             }
 
+            $http.get('data/descriptions.json').success (function(data) {
+                $scope.descriptions = data;
+            });
+
             $scope.methods = [];
             $scope.$watch(function () { return $rootScope.resources; },
                 function (resources) {
-                    for(var resource in resources){
-                        for(var method in resources[resource].methods){
-                            $scope.methods.push(resources[resource].methods[method]);
+                    $scope.$watch(function () { return $scope.descriptions; },
+                        function (descriptions) {
+                            for(var resourceKey in resources){
+                                for(var methodKey in resources[resourceKey].methods){
+                                    var method = resources[resourceKey].methods[methodKey];
+                                    method.description = descriptions[method.id];
+                                    $scope.methods.push(method);
+                                }
+                            }
                         }
-                    }
+                    );
                 }
             );
 

@@ -2,28 +2,28 @@
     <div class="table table-2">
         <!-- Title Row -->
         <div class="title-row">
-            <div class="col-lg-4 col-xs-4" ng-click="sortBy('id')">
+            <div class="col-lg-3 col-xs-3" ng-click="sortBy('id')">
                 {{'RESOURCE_NAME' | translate}}
                 <i ng-if="sortByCat == 'id'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
             </div>
-            <div class="col-lg-6 col-xs-6" ng-click="sortBy('description')">
+            <div class="col-lg-8 col-xs-8" ng-click="sortBy('description')">
                 {{'RESOURCE_DESCRIPTION' | translate}}
                 <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
             </div>
-            <div class="col-lg-2 col-xs-2" ng-click="sortBy('httpMethod')">
+            <div class="col-lg-1 col-xs-1" ng-click="sortBy('httpMethod')">
                 {{'RESOURCE_METHOD' | translate}}
                 <i ng-if="sortByCat == 'httpMethod'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
             </div>
         </div>
         <!-- Apps -->
         <a ng-click="explore(method.id)" class="tr-row" ng-repeat="method in methods | orderBy:sortByCat:sortReverse" style="cursor: pointer; cursor: hand;">
-            <div class="col-lg-4 col-xs-4">
+            <div class="col-lg-3 col-xs-3">
                 {{ method.id }}
             </div>
-            <div class="col-lg-6 col-xs-6">
+            <div class="col-lg-8 col-xs-8">
                 {{ method.description }}
             </div>
-            <div class="col-lg-2 col-xs-2">
+            <div class="col-lg-1 col-xs-1">
                 {{ method.httpMethod }}
             </div>
         </a>
