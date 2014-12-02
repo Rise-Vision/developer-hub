@@ -34,29 +34,29 @@
     </div>
 </div>
 
-<div class="responsive-table" ng-show="loadingComplete && showAppTable">
+<div class="table-responsive table-2" ng-show="loadingComplete && showAppTable">
     <!-- Title Row -->
     <div class="title-row">
 
         <div class="col-lg-2 col-xs-2" ng-click="sortBy('name')">
             {{'APP_NAME' | translate}}
-            <i ng-if="sortByCat == 'name'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
+            <i ng-if="sortByCat == 'name'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
         </div>
         <div class="col-lg-4 col-xs-4" ng-click="sortBy('description')">
             {{'APP_DESCRIPTION' | translate}}
-            <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
+            <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
         </div>
         <div class="col-lg-2 col-xs-2 text-right" ng-click="sortBy('clientId')">
             {{'APP_CLIENT_ID' | translate}}
-            <i ng-if="sortByCat == 'clientId'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
+            <i ng-if="sortByCat == 'clientId'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
         </div>
         <div class="col-lg-2 col-xs-2 text-right" ng-click="sortBy('url')">
             {{'APP_URL' | translate}}
-            <i ng-if="sortByCat == 'url'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
+            <i ng-if="sortByCat == 'url'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
         </div>
-        <div class="col-lg-2 col-xs-2 text-right" ng-click="sortBy('modified')">
+        <div class="col-lg-2 col-xs-2 text-right" ng-click="sortBy('changeDate')">
             {{'APP_MODIFIED' | translate}}
-            <i ng-if="sortByCat == 'modified'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
+            <i ng-if="sortByCat == 'changeDate'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
         </div>
     </div>
     <!-- Apps -->
