@@ -9,7 +9,7 @@ angular.module("risevision.developer.hub")
 
             $scope.documentationUrl = "http://help.risevision.com/#/developer/core-api/"
 
-            var listResourcesResult = getRest("core","v0")
+            var listResourcesResult = getRest("core","v1")
                 .then(function (api) {
                     $rootScope.resources = api.resources;
                 }, function (errorResult) {
