@@ -1,24 +1,23 @@
-<div class="responsive-table">
-    <!-- Title Row -->
-    <div class="title-row">
-
-        <div class="col-lg-4 col-xs-4" ng-click="sortBy('name')">
-            {{'RESOURCE_NAME' | translate}}
-            <i ng-if="sortByCat == 'name'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
+<div class="table-responsive">
+    <div class="table table-2">
+        <!-- Title Row -->
+        <div class="title-row">
+            <div class="col-lg-4 col-xs-4" ng-click="sortBy('id')">
+                {{'RESOURCE_NAME' | translate}}
+                <i ng-if="sortByCat == 'id'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+            </div>
+            <div class="col-lg-6 col-xs-6" ng-click="sortBy('description')">
+                {{'RESOURCE_DESCRIPTION' | translate}}
+                <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+            </div>
+            <div class="col-lg-2 col-xs-2" ng-click="sortBy('httpMethod')">
+                {{'RESOURCE_METHOD' | translate}}
+                <i ng-if="sortByCat == 'httpMethod'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+            </div>
         </div>
-        <div class="col-lg-6 col-xs-6" ng-click="sortBy('description')">
-            {{'RESOURCE_DESCRIPTION' | translate}}
-            <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
-        </div>
-        <div class="col-lg-2 col-xs-2" ng-click="sortBy('method')">
-            {{'RESOURCE_METHOD' | translate}}
-            <i ng-if="sortByCat == 'method'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
-        </div>
-    </div>
-    <!-- Apps -->
-    <div ng-repeat="resource in resources" class="tr-row">
-        <div ng-click="explore(method.id)" class="tr-row" ng-repeat="method in resource.methods" style="cursor: pointer; cursor: hand;">
-            <div class="col-lg-4 col-xs-4 highlight">
+        <!-- Apps -->
+        <a ng-click="explore(method.id)" class="tr-row" ng-repeat="method in methods | orderBy:sortByCat:sortReverse" style="cursor: pointer; cursor: hand;">
+            <div class="col-lg-4 col-xs-4">
                 {{ method.id }}
             </div>
             <div class="col-lg-6 col-xs-6">
@@ -27,6 +26,6 @@
             <div class="col-lg-2 col-xs-2">
                 {{ method.httpMethod }}
             </div>
-        </div>
+        </a>
     </div>
 </div>
