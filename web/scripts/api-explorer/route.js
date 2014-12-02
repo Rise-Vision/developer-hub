@@ -6,22 +6,24 @@
 angular.module("risevision.developer.hub")
     .config (["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 
+        $urlRouterProvider.when("/api-explorer", "/api-explorer/list");
+
         $stateProvider
-            .state('api-explorer', {
+            .state("api-explorer", {
                 templateUrl: "partials/api-explorer/api-explorer.html",
-                controller: 'ApiExplorerMainController'
+                controller: "ApiExplorerMainController"
             })
             .state("api-explorer.list", {
-                url: '/api-explorer/list',
-                templateUrl: 'partials/api-explorer/api-explorer.list.html',
-                controller: 'ApiExplorerListController'
+                url: "/api-explorer/list",
+                templateUrl: "partials/api-explorer/api-explorer.list.html",
+                controller: "ApiExplorerListController"
             })
-            .state('api-explorer.explore', {
+            .state("api-explorer.explore", {
                 templateUrl: "partials/api-explorer/api-explorer-explore.html"
             })
-            .state('api-explorer.explore.endpoint', {
-                url: '/api-explorer/:id',
+            .state("api-explorer.explore.endpoint", {
+                url: "/api-explorer/:id",
                 templateUrl: "partials/api-explorer/api-explorer-explore-endpoint.html",
-                controller: 'ApiExplorerExploreEndpointController'
+                controller: "ApiExplorerExploreEndpointController"
             })
     }]);
