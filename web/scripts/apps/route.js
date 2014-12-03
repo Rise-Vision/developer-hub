@@ -11,7 +11,7 @@ angular.module("risevision.developer.hub")
         $stateProvider
             .state('apps', {
                 template: "<div ui-view></div>",
-                abstract: true
+                controller: 'MainAppController'
             })
             /*.state('apps.main', {
                 url: '/apps',

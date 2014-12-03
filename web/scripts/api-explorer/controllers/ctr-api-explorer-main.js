@@ -13,6 +13,10 @@ angular.module("risevision.developer.hub")
                 $rootScope.descriptions = data;
             });
 
+            $http.get('data/metatags.json').success (function(data) {
+                $rootScope.metatag = data["api-explorer"];
+            });
+
             var listResourcesResult = getRest("core","v1")
                 .then(function (api) {
                     $rootScope.resources = api.resources;
