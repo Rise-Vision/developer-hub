@@ -31,39 +31,39 @@
                 <h3>{{'APP_NO_APP_YET_MESSAGE' | translate}}</h3>
             </div>
         </div>
-        <div class="content-box hidden-xs" ng-show="loadingComplete && showAppTable">
+        <div class="content-box table-responsive" ng-show="loadingComplete && showAppTable">
             <table class="table-2 table-hover">
                 <thead>
                     <tr>
-                        <th>
+                        <th class="col-lg-2 col-xs-2">
                             <a href="" ng-click="sortBy('name')">{{'APP_NAME' | translate}}
                                  <span>
                                   <i ng-if="sortByCat == 'name'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
-                        <th>
+                        <th class="col-lg-4 col-xs-4 hidden-sm hidden-xs">
                             <a href="" ng-click="sortBy('description')">{{'APP_DESCRIPTION' | translate}}
                                  <span>
                                   <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
-                        <th>
+                        <th class="col-lg-2 col-xs-2 hidden-xs">
                             <a href="" ng-click="sortBy('clientId')">{{'APP_CLIENT_ID' | translate}}
                                  <span>
                                   <i ng-if="sortByCat == 'clientId'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
-                        <th>
+                        <th class="col-lg-2 col-xs-2 hidden-xs">
                             <a href="" ng-click="sortBy('url')">{{'APP_URL' | translate}}
                                  <span>
                                   <i ng-if="sortByCat == 'url'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
-                        <th class="text-right">
+                        <th class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs">
                             <a href="" ng-click="sortBy('changeDate')">{{'APP_MODIFIED' | translate}}
                                  <span>
                                   <i ng-if="sortByCat == 'changeDate'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
@@ -74,11 +74,11 @@
                 </thead>
                 <tbody>
                     <tr ng-click="editApp(app.id)" class="tr-row" ng-repeat="app in apps | orderBy:sortByCat:sortReverse">
-                        <td><a class="ellipsed" href=""><strong>{{ app.name }}</strong></a></td>
-                        <td><a class="ellipsed" href="">{{ app.description }}</a></td>
-                        <td><a class="ellipsed" href="">{{ app.clientId }}</a></td>
-                        <td><a class="ellipsed" href="">{{ app.url }}</a></td>
-                        <td class="text-right"><a href="">{{ app.changeDate | date :'dd-MMM-yyyy h:mm a'}}</a></td>
+                        <td class="col-lg-2 col-xs-2"><a class="ellipsed" href=""><strong>{{ app.name }}</strong></a></td>
+                        <td class="col-lg-4 col-xs-4 hidden-sm hidden-xs"><a class="ellipsed" href="">{{ app.description }}</a></td>
+                        <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsed" href="">{{ app.clientId }}</a></td>
+                        <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsed" href="">{{ app.url }}</a></td>
+                        <td class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs"><a href="">{{ app.changeDate | date :'dd-MMM-yyyy h:mm a'}}</a></td>
                     </tr>
                 </tbody>
             </table>
