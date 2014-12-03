@@ -4,10 +4,14 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("ApiExplorerMainController",
-    ["$rootScope", "$scope", "$state", "$log", "getRest",
-        function($rootScope, $scope, $state, $log, getRest){
+    ["$rootScope", "$scope", "$state", "$log", "getRest", "$http",
+        function($rootScope, $scope, $state, $log, getRest, $http){
 
             $scope.documentationUrl = "http://help.risevision.com/#/developer/core-api/"
+
+            $http.get('data/descriptions.json').success (function(data) {
+                $rootScope.descriptions = data;
+            });
 
             var listResourcesResult = getRest("core","v1")
                 .then(function (api) {

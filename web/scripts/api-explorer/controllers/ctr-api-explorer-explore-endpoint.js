@@ -21,8 +21,13 @@ angular.module("risevision.developer.hub")
 
             $scope.$watch(function () { return $rootScope.resources; },
                 function (resources) {
-                    $rootScope.resourceName = idParts[1];
-                    $rootScope.method = $rootScope.resources[idParts[1]].methods[idParts[2]]
+                    $scope.$watch(function () { return $rootScope.descriptions; },
+                        function (descriptions) {
+                            $rootScope.resourceName = idParts[1];
+                            $rootScope.method = $rootScope.resources[idParts[1]].methods[idParts[2]]
+                            $rootScope.method.description = descriptions[$rootScope.method.id];
+                       }
+                    );
                 }
             );
 
