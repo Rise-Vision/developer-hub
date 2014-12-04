@@ -63,7 +63,7 @@
                                 </span>
                             </a>
                         </th>
-                        <th class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs">
+                        <th class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs hidden-md">
                             <a href="" ng-click="sortBy('changeDate')">{{'APP_MODIFIED' | translate}}
                                  <span>
                                   <i ng-if="sortByCat == 'changeDate'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
@@ -73,12 +73,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-click="editApp(app.id)" class="tr-row" ng-repeat="app in apps | orderBy:sortByCat:sortReverse">
+                    <tr ng-click="editApp(app.id)" ng-repeat="app in apps | orderBy:sortByCat:sortReverse">
                         <td class="col-lg-2 col-xs-2"><a class="ellipsed" href=""><strong>{{ app.name }}</strong></a></td>
                         <td class="col-lg-4 col-xs-4 hidden-sm hidden-xs"><a class="ellipsed" href="">{{ app.description }}</a></td>
                         <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsed" href="">{{ app.clientId }}</a></td>
                         <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsed" href="">{{ app.url }}</a></td>
-                        <td class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs"><a href="">{{ app.changeDate | date :'dd-MMM-yyyy h:mm a'}}</a></td>
+                        <td class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs hidden-md"><a href="">{{ app.changeDate | date :'dd-MMM-yyyy h:mm a'}}</a></td>
                     </tr>
                 </tbody>
             </table>
