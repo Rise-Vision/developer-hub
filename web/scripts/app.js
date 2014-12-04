@@ -71,10 +71,10 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'API_EXPLORER': 'API Explorer',
             'RV_CODEBASE': 'Rise Vision Codebase',
             'DEVELOPER_DOCS': 'Developer Documentation',
-            'NAME_REQUIRED_ERROR': 'Name is required',
-            'WRONG_CLIENT_ID_FORMAT': 'Wrong Client Id Format',
-            'WRONG_URL_FORMAT': 'Wrong Url Format',
-            'EXISTENT_CLIENT_ID': 'Client Id already exists.'
+            'NAME_REQUIRED_ERROR': 'Name Is Required',
+            'WRONG_CLIENT_ID_FORMAT': 'Wrong Client ID Format',
+            'WRONG_URL_FORMAT': 'Wrong URL Format',
+            'EXISTENT_CLIENT_ID': 'Client ID Already Exists'
         });
 
 
