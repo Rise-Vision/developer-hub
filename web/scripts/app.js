@@ -76,7 +76,7 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'WRONG_URL_FORMAT': 'Wrong Url Format',
             'EXISTENT_CLIENT_ID': 'Client Id already exists.',
             'DELETE_CONFIRMATION': 'Are you sure you want to delete this app?',
-            'OK_BUTTON': 'OK'
+            'DELETE_FOREVER_BUTTON': 'Delete Forever'
         });
 
 
