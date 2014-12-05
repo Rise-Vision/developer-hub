@@ -71,6 +71,8 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'API_EXPLORER': 'API Explorer',
             'RV_CODEBASE': 'Rise Vision Codebase',
             'DEVELOPER_DOCS': 'Developer Documentation',
+            'DELETE_CONFIRMATION': 'Are you sure you want to delete this app?',
+            'DELETE_FOREVER_BUTTON': 'Delete Forever'
             'NAME_REQUIRED_ERROR': 'Name Is Required',
             'WRONG_CLIENT_ID_FORMAT': 'Wrong Client ID Format',
             'WRONG_URL_FORMAT': 'Wrong URL Format',
