@@ -9,7 +9,13 @@ angular.module("risevision.developer.hub")
         $scope.apps = [];
         $scope.showNoAppMessage = true;
         $scope.loadingComplete = false;
+        $scope.sortReverse = false;
         var _id = "";
+
+        $scope.sortBy = function(category){
+            $scope.sortByCat = category;
+            $scope.sortReverse = !$scope.sortReverse;
+        }
 
         var toogleMessageAndTable = function(){
             if($scope.apps != null && $scope.apps.length > 0){
