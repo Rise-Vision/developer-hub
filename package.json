@@ -21,7 +21,8 @@
         "chai": "^1.9.2",
         "chai-as-promised": "^4.1.1",
         "run-sequence": "^0.3.6",
-        "widget-tester": "git://github.com/Rise-Vision/widget-tester.git"
+        "widget-tester": "git://github.com/Rise-Vision/widget-tester.git",
+        "gulp-sass": "~0.7.1"
     },
     "repository": {
         "type": "git",

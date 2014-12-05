@@ -15,6 +15,7 @@ var argv        = require('minimist')(process.argv.slice(2));
 var rename      = require("gulp-rename");
 var factory     = require("widget-tester").gulpTaskFactory;
 var runSequence = require("run-sequence");
+var sass        = require("gulp-sass");
 
 
 //------------------------- Browser Sync --------------------------------
@@ -64,6 +65,7 @@ gulp.task('bower-rm', function(){
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
+    gulp.watch('web/scss/**/*.scss', ['sass']);
     gulp.watch(['web/**/*'], ['browser-sync-reload']);
 });
 
@@ -117,6 +119,12 @@ gulp.task("cname", function() {
     .pipe(gulp.dest("./web"));
 });
 
+
+gulp.task("sass", function () {
+    return gulp.src("web/scss/**/*.scss")
+        .pipe(sass())
+        .pipe(gulp.dest("web/css"));
+});
 
 /**
  * Do a bower clean install

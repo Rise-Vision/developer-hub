@@ -1,5 +1,5 @@
 "use strict";
-angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app", "ui.bootstrap", "risevision.common.loading", "risevision.google-analytics"])
+angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app", "ui.bootstrap", "risevision.common.loading", "risevision.common.apis","risevision.common.core.endpoint","risevision.google-analytics"])
     .config(["uiStatusDependencies", function (uiStatusDependencies) {
         uiStatusDependencies.addDependencies({
             "hasManagementRoles": "registerdAsRiseVisionUser",
@@ -71,6 +71,11 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'API_EXPLORER': 'API Explorer',
             'RV_CODEBASE': 'Rise Vision Codebase',
             'DEVELOPER_DOCS': 'Developer Documentation',
+            'RESOURCE_NAME': 'Name',
+            'RESOURCE_DESCRIPTION': 'Description',
+            'RESOURCE_METHOD': 'Method',
+            'RESOURCE_DOCUMENTATION_LINK': 'Documentation',
+            'APPLY_BUTTON': 'Apply',
             'DELETE_CONFIRMATION': 'Are you sure you want to delete this app?',
             'DELETE_FOREVER_BUTTON': 'Delete Forever',
             'NAME_REQUIRED_ERROR': 'Name Is Required',

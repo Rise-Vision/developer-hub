@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <!-- *** Developer Meta *** -->
     <!-- Place this data between the <head> tags of your website -->
-    <title>Rise Vision Developer Console | Digital signage developer resources</title>
-    <meta name="description" content="The Rise Vision Developer Console is a resource to help developers build applications and widgets with Rise Vision's APIs and open source code" />
+    <title>{{metatag.title}}</title>
+    <meta name="description" content="{{metatag.description}}" />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="Rise Vision Developer Console">
-    <meta itemprop="description" content="The Rise Vision Developer Console is a resource to help developers build applications and widgets with Rise Vision's APIs and open source code">
-    <meta itemprop="image" content="https://s3.amazonaws.com/Store-Products/Meta/developer.png">
+    <meta itemprop="name" content="{{metatag.name}}">
+    <meta itemprop="description" content="{{metatag.description}}">
+    <meta itemprop="image" content="{{metatag.image}}">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@RiseVision">
-    <meta name="twitter:title" content="Rise Vision Developer Console">
-    <meta name="twitter:description" content="The Rise Vision Developer Console is a resource to help developers build applications and widgets with Rise Vision's APIs and open source code">
-    <meta name="twitter:image:src" content="https://s3.amazonaws.com/Store-Products/Meta/developer.png">
+    <meta name="twitter:title" content="{{metatag.name}}">
+    <meta name="twitter:description" content="{{metatag.description}}">
+    <meta name="twitter:image:src" content="{{metatag.image}}">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Rise Vision Developer Console" />
+    <meta property="og:title" content="{{metatag.name}}" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://developer.risevision.com/" />
-    <meta property="og:image" content="https://s3.amazonaws.com/Store-Products/Meta/developer.png" />
-    <meta property="og:description" content="The Rise Vision Developer Console is a resource to help developers build applications and widgets with Rise Vision's APIs and open source code" />
+    <meta property="og:url" content="{{metatag.url}}" />
+    <meta property="og:image" content="{{metatag.image}}" />
+    <meta property="og:description" content="{{metatag.description}}" />
 
     <link rel="stylesheet" href="components/rv-common-style/dist/css/rise.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -54,15 +54,25 @@
     <script src="components/rv-loading/loading.js"></script>
     <script src="components/angular-google-analytics/src/js/dtv-google-analytics.js"></script>
 
-    <!-- Developer hub angular modules -->
+    <!-- Developer hub APPs angular modules -->
     <script src="components/ng-core-api-client/src/js/svc-app.js"></script>
     <script src="scripts/app.js"></script>
-    <script src="scripts/route.js"></script>
-    <script src="scripts/controllers/ctr-common-header-navbar.js"></script>
+    <script src="scripts/apps/route.js"></script>
+    <script src="scripts/ctr-common-header-navbar.js"></script>
     <script src="scripts/services/svc-error-info.js"></script>
-    <script src="scripts/controllers/ctr-app-management.js"></script>
-    <script src="scripts/controllers/ctr-add-app.js"></script>
-    <script src="scripts/controllers/ctr-edit-app.js"></script>
+    <script src="scripts/apps/controllers/ctr-app-main.js"></script>
+    <script src="scripts/apps/controllers/ctr-app-management.js"></script>
+    <script src="scripts/apps/controllers/ctr-add-app.js"></script>
+    <script src="scripts/apps/controllers/ctr-edit-app.js"></script>
+
+    <!-- Developer hub API Explorer angular modules -->
+    <script src="components/ng-gapi-loader/src/js/svc-gapi.js"></script>
+    <script src="components/ng-core-api-client/src/js/svc-apis.js"></script>
+    <script src="components/ng-core-api-client/src/js/svc-core-endpoint.js"></script>
+    <script src="scripts/api-explorer/route.js"></script>
+    <script src="scripts/api-explorer/controllers/ctr-api-explorer-main.js"></script>
+    <script src="scripts/api-explorer/controllers/ctr-api-explorer-list.js"></script>
+    <script src="scripts/api-explorer/controllers/ctr-api-explorer-explore-endpoint.js"></script>
 
     </body>
 </html>
