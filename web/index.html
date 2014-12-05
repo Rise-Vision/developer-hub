@@ -34,6 +34,7 @@
 
 </head>
 <body>
+    <analytics analytics-account-id="'UA-82239-1'"></analytics>
     <common-header nav-options="navOptions" ng-controller="CommonHeaderNavbarCtrl" hide-shopping-cart="true" hide-help-menu="true"></common-header>
 
     <div class="container">
@@ -51,12 +52,14 @@
     <script src="components/spin.js/spin.js"></script>
     <script src="components/angular-spinner/angular-spinner.js"></script>
     <script src="components/rv-loading/loading.js"></script>
+    <script src="components/angular-google-analytics/src/js/dtv-google-analytics.js"></script>
 
     <!-- Developer hub APPs angular modules -->
     <script src="components/ng-core-api-client/src/js/svc-app.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/apps/route.js"></script>
     <script src="scripts/ctr-common-header-navbar.js"></script>
+    <script src="scripts/services/svc-error-info.js"></script>
     <script src="scripts/apps/controllers/ctr-app-main.js"></script>
     <script src="scripts/apps/controllers/ctr-app-management.js"></script>
     <script src="scripts/apps/controllers/ctr-add-app.js"></script>
@@ -72,15 +75,4 @@
     <script src="scripts/api-explorer/controllers/ctr-api-explorer-explore-endpoint.js"></script>
 
     </body>
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-82239-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
 </html>

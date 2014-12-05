@@ -1,6 +1,6 @@
 <div class="app-header add-bottom">
-    <div class="app-title">
-        <h1>{{'APP_EDITION' | translate}}</h1>
+    <div class="title-block">
+        <h1>{{'APP' | translate}}</h1>
     </div>
 </div>
 
@@ -27,8 +27,9 @@
             <!-- Client ID -->
             <div class="form-group">
                 <label for="appClientIdField" id="appClientIdLabel">{{'APP_CLIENT_ID' | translate}}</label>
-                <input type="text" class="form-control" id="appClientIdField" name="appClientIdField" ng-model="app.clientId" ng-pattern="/^((?!-)[A-Za-z0-9-]{1,63}(?!-)\.)+[A-Za-z]{2,30}$/i" />
+                <input type="text" class="form-control" id="appClientIdField" name="appClientIdField" ng-model="app.clientId" ng-pattern="/^((?!-)[A-Za-z0-9-]{1,63}(?!-)\.)+[A-Za-z]{2,30}$/i" ng-change="hideExistentClientIdMessage()"/>
                 <span ng-show="form.appClientIdField.$dirty && form.appClientIdField.$error.pattern" class="validation-error-message">{{'WRONG_CLIENT_ID_FORMAT' | translate}}</span>
+                <span ng-show="form.appClientIdField.$dirty && showExistentClientIdMessage" class="validation-error-message">{{'EXISTENT_CLIENT_ID' | translate}}</span>
             </div>
             <!-- url -->
             <div class="form-group">
@@ -37,17 +38,19 @@
                 <span ng-show="form.appUrlField.$dirty && form.appUrlField.$error.url" class="validation-error-message">{{'WRONG_URL_FORMAT' | translate}}</span>
             </div>
             <!-- Delete -->
-            <button class="btn btn-danger btn-fixed-width pull-right" ng-click="deleteApp(app.id)">
+            <button class="btn btn-danger btn-fixed-width pull-left" ng-click="deleteApp(app.id)">
                 {{'DELETE_BUTTON' | translate}} <i class="fa fa-white fa-trash-o icon-right"></i>
             </button>
-            <!-- Cancel -->
-            <a href="#/list" class="btn btn-default btn-fixed-width">
-                {{'CANCEL_BUTTON' | translate}} <i class="fa fa-white fa-times icon-right"></i>
-            </a>
-            <!-- Save -->
-            <button type="button" ng-disabled="!form.$valid" class="btn btn-success btn-fixed-width" ng-click="save(app)">
-                {{'SAVE_BUTTON' | translate}} <i class="fa fa-white fa-check icon-right"></i>
-            </button>
+            <div class="pull-right">
+                <!-- Save -->
+                <button type="button" ng-disabled="!form.$valid" class="btn btn-success btn-fixed-width" ng-click="save(app)">
+                    {{'SAVE_BUTTON' | translate}} <i class="fa fa-white fa-check icon-right"></i>
+                </button>
+                <!-- Cancel -->
+                <a href="#/list" class="btn btn-default btn-fixed-width">
+                    {{'CANCEL_BUTTON' | translate}} <i class="fa fa-white fa-times icon-right"></i>
+                </a>
+            </div>
         </form>
     </div>
 </div>

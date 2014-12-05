@@ -18,7 +18,8 @@
     "angular-ui-router": "0.2.11",
     "angular-translate": "2.4.1",
     "angular-bootstrap": "~0.11.0",
-    "rv-loading": "https://github.com/Rise-Vision/rv-loading.git"
+    "rv-loading": "https://github.com/Rise-Vision/rv-loading.git",
+    "angular-google-analytics": "https://github.com/Rise-Vision/angular-google-analytics.git"
   },
   "devDependencies": {
     "JSONedit": "~0.1.0"

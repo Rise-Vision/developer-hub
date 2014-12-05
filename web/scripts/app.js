@@ -1,5 +1,5 @@
 "use strict";
-angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app", "ui.bootstrap", "risevision.common.loading", "risevision.common.apis","risevision.common.core.endpoint"])
+angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app", "ui.bootstrap", "risevision.common.loading", "risevision.common.apis","risevision.common.core.endpoint","risevision.google-analytics"])
     .config(["uiStatusDependencies", function (uiStatusDependencies) {
         uiStatusDependencies.addDependencies({
             "hasManagementRoles": "registerdAsRiseVisionUser",
@@ -41,13 +41,13 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'APP_CLIENT_ID': "Client ID",
             'APP_DESCRIPTION': "Description",
             'APP_URL': 'URL',
-            'APP_MODIFIED': 'Date Modified',
+            'APP_MODIFIED': 'Modified',
             'SAVE_BUTTON': "Save",
             'CANCEL_BUTTON': "Cancel",
             'EDIT_BUTTON': "Edit",
             'APPS': 'Apps',
             'APP_REGISTRATION': 'App Registration',
-            'APP_EDITION': 'App Edition',
+            'APP': 'App',
             'REGISTER_AN_APP': 'Register An App',
             'APP_NO_APP_YET_MESSAGE': "You haven't registered any apps yet",
             'APP_ACTION': 'ACTION',
@@ -71,14 +71,17 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'API_EXPLORER': 'API Explorer',
             'RV_CODEBASE': 'Rise Vision Codebase',
             'DEVELOPER_DOCS': 'Developer Documentation',
-            'NAME_REQUIRED_ERROR': 'Name is required',
-            'WRONG_CLIENT_ID_FORMAT': 'Wrong Client Id Format',
-            'WRONG_URL_FORMAT': 'Wrong Url Format',
             'RESOURCE_NAME': 'Name',
             'RESOURCE_DESCRIPTION': 'Description',
             'RESOURCE_METHOD': 'Method',
             'RESOURCE_DOCUMENTATION_LINK': 'Documentation',
-            'APPLY_BUTTON': 'Apply'
+            'APPLY_BUTTON': 'Apply',
+            'DELETE_CONFIRMATION': 'Are you sure you want to delete this app?',
+            'DELETE_FOREVER_BUTTON': 'Delete Forever',
+            'NAME_REQUIRED_ERROR': 'Name Is Required',
+            'WRONG_CLIENT_ID_FORMAT': 'Wrong Client ID Format',
+            'WRONG_URL_FORMAT': 'Wrong URL Format',
+            'EXISTENT_CLIENT_ID': 'Client ID Already Exists'
         });
 
 

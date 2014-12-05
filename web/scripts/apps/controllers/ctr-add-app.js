@@ -4,8 +4,8 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("AddAppController",
-    ["$scope", "$state", "$timeout", "createApp", "userState", "$modal", "$log",
-    function($scope, $state, $timeout, createApp, userState, $modal, $log){
+    ["$scope", "$state", "$timeout", "createApp", "userState", "$modal", "$log", "errorInfo",
+    function($scope, $state, $timeout, createApp, userState, $modal, $log, errorInfo){
 
         $scope.info = function() {
             $modal.open({
@@ -16,9 +16,18 @@ angular.module("risevision.developer.hub")
         $scope.save = function(app) {
             createApp(userState.getSelectedCompanyId(), userState.getUsername(), app).then(function(result) {
                 $state.go("apps.list");
-
             }, function(errorResult) {
                 $log.debug("Error: " + errorResult.code + " - " + errorResult.message);
+                if(errorResult.message == "Client Id already exists!"){
+                    $scope.showExistentClientIdMessage = true;
+                }else{
+                    errorInfo(errorResult.message);
+                }
+
             });
+        }
+
+        $scope.hideExistentClientIdMessage = function(){
+            $scope.showExistentClientIdMessage = false;
         }
     }])
