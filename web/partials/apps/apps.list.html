@@ -1,8 +1,7 @@
 <div id="appsPage" class="app-header add-bottom">
-    <div class="app-title">
+    <div class="title-block">
         <h1>{{'APPS' | translate}}</h1>
     </div>
-
     <div class="global-actions">
         <button class="btn btn-lg btn-primary" ng-click="addNewApp()">
           {{'REGISTER_AN_APP' | translate}} <i class="fa fa-white fa-plus icon-right"></i>
@@ -10,72 +9,79 @@
     </div>
 </div>
 
-
-<div>
-    <p>To learn more about how to register an application that uses the Rise Vision application programming interfaces (API's) please click <a href="http://help.risevision.com/#/developer/getting-started/registration/app-registration" target="_blank">here</a>.</p>
-    <p>If you would like to build upon the applications that we have already created with our API's please check out our open source repositories on GitHub <a href="https://github.com/Rise-Vision" target="_blank">here</a>.</p>
-    <p>And, if you have any questions along the way please don't hesitate to join our lively Community <a href="http://community.risevision.com" target="_blank">here</a>.</p>
-</div>
-
-
 <div rv-spinner
-    rv-spinner-key="rv-dev-hub-apps-loader"
-    rv-spinner-start-active="1"
-    rv-spinner-backdrop-class="spinner-backdrop"
-></div>
+     rv-spinner-key="rv-dev-hub-apps-loader"
+     rv-spinner-start-active="1"
+     rv-spinner-backdrop-class="spinner-backdrop"
+        ></div>
 
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        <div>
+            <p>To learn more about how to register an application that uses the Rise Vision application programming interfaces (API's) please click <a href="http://help.risevision.com/#/developer/getting-started/registration/app-registration" target="_blank">here</a>.</p>
+            <p>If you would like to build upon the applications that we have already created with our API's please check out our open source repositories on GitHub <a href="https://github.com/Rise-Vision" target="_blank">here</a>.</p>
+            <p>And, if you have any questions along the way please don't hesitate to join our lively Community <a href="http://community.risevision.com" target="_blank">here</a>.</p>
+        </div>
 
-<div class="empty-state" ng-if="loadingComplete && showNoAppMessage">
-    <div class="tag">
-        <!-- Icon -->
-        <i class="fa  fa-bolt fa-5x"></i>
-        <!-- Main Title -->
-        <h3>{{'APP_NO_APP_YET_MESSAGE' | translate}}</h3>
+        <div class="empty-state" ng-if="loadingComplete && showNoAppMessage">
+            <div class="tag">
+                <!-- Icon -->
+                <i class="fa  fa-bolt fa-5x"></i>
+                <!-- Main Title -->
+                <h3>{{'APP_NO_APP_YET_MESSAGE' | translate}}</h3>
+            </div>
+        </div>
+        <div class="content-box table-responsive" ng-show="loadingComplete && showAppTable">
+            <table class="table-2 table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-lg-2 col-xs-2">
+                            <a href="" ng-click="sortBy('name')">{{'APP_NAME' | translate}}
+                                 <span>
+                                  <i ng-if="sortByCat == 'name'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                                </span>
+                            </a>
+                        </th>
+                        <th class="col-lg-4 col-xs-4 hidden-sm hidden-xs">
+                            <a href="" ng-click="sortBy('description')">{{'APP_DESCRIPTION' | translate}}
+                                 <span>
+                                  <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                                </span>
+                            </a>
+                        </th>
+                        <th class="col-lg-2 col-xs-2 hidden-xs">
+                            <a href="" ng-click="sortBy('clientId')">{{'APP_CLIENT_ID' | translate}}
+                                 <span>
+                                  <i ng-if="sortByCat == 'clientId'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                                </span>
+                            </a>
+                        </th>
+                        <th class="col-lg-2 col-xs-2 hidden-xs">
+                            <a href="" ng-click="sortBy('url')">{{'APP_URL' | translate}}
+                                 <span>
+                                  <i ng-if="sortByCat == 'url'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                                </span>
+                            </a>
+                        </th>
+                        <th class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs hidden-md">
+                            <a href="" ng-click="sortBy('changeDate')">{{'APP_MODIFIED' | translate}}
+                                 <span>
+                                  <i ng-if="sortByCat == 'changeDate'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                                </span>
+                            </a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-click="editApp(app.id)" ng-repeat="app in apps | orderBy:sortByCat:sortReverse">
+                        <td class="col-lg-2 col-xs-2"><a class="ellipsed" href=""><strong>{{ app.name }}</strong></a></td>
+                        <td class="col-lg-4 col-xs-4 hidden-sm hidden-xs"><a class="ellipsed" href="">{{ app.description }}</a></td>
+                        <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsed" href="">{{ app.clientId }}</a></td>
+                        <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsed" href="">{{ app.url }}</a></td>
+                        <td class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs hidden-md"><a href="">{{ app.changeDate | date :'dd-MMM-yyyy h:mm a'}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
-
-<div class="responsive-table" ng-show="loadingComplete && showAppTable">
-    <!-- Title Row -->
-    <div class="title-row">
-
-        <div class="col-lg-2 col-xs-2" ng-click="sortBy('name')">
-            {{'APP_NAME' | translate}}
-            <i ng-if="sortByCat == 'name'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
-        </div>
-        <div class="col-lg-4 col-xs-4" ng-click="sortBy('description')">
-            {{'APP_DESCRIPTION' | translate}}
-            <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
-        </div>
-        <div class="col-lg-2 col-xs-2 text-right" ng-click="sortBy('clientId')">
-            {{'APP_CLIENT_ID' | translate}}
-            <i ng-if="sortByCat == 'clientId'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
-        </div>
-        <div class="col-lg-2 col-xs-2 text-right" ng-click="sortBy('url')">
-            {{'APP_URL' | translate}}
-            <i ng-if="sortByCat == 'url'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
-        </div>
-        <div class="col-lg-2 col-xs-2 text-right" ng-click="sortBy('modified')">
-            {{'APP_MODIFIED' | translate}}
-            <i ng-if="sortByCat == 'modified'" class="fa" ng-class="{false: 'fa-sort-up', true: 'fa-sort-down'}[sortReverse]"></i>
-        </div>
-    </div>
-    <!-- Apps -->
-    <a ng-click="editApp(app.id)" class="tr-row" ng-repeat="app in apps | orderBy:sortByCat:sortReverse" style="cursor: pointer; cursor: hand;">
-
-        <div class="col-lg-2 col-xs-2 highlight">
-            {{ app.name }}
-        </div>
-        <div class="col-lg-4 col-xs-4">
-            {{ app.description }}
-        </div>
-        <div class="col-lg-2 col-xs-2 text-right">
-            {{ app.clientId }}
-        </div>
-        <div class="col-lg-2 col-xs-2 text-right">
-            {{ app.url }}
-        </div>
-        <div class="col-lg-2 col-xs-2 text-right">
-            {{ app.changeDate | date :'short'}}
-        </div>
-    </a>
 </div>
