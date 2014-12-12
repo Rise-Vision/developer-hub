@@ -19,7 +19,9 @@
     "angular-translate": "2.4.1",
     "angular-bootstrap": "~0.11.0",
     "rv-loading": "https://github.com/Rise-Vision/rv-loading.git",
-    "angular-google-analytics": "https://github.com/Rise-Vision/angular-google-analytics.git"
+    "angular-google-analytics": "https://github.com/Rise-Vision/angular-google-analytics.git",
+    "jQuery.dotdotdot": "https://github.com/BeSite/jQuery.dotdotdot.git",
+    "angular-dotdotdot": "https://github.com/Rise-Vision/angular-dotdotdot.git"
   },
   "devDependencies": {
     "JSONedit": "~0.1.0"

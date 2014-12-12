@@ -74,11 +74,11 @@
                 </thead>
                 <tbody>
                     <tr ng-click="editApp(app.id)" ng-repeat="app in apps | orderBy:sortByCat:sortReverse">
-                        <td class="col-lg-2 col-xs-2"><a class="ellipsed" href=""><strong>{{ app.name }}</strong></a></td>
-                        <td class="col-lg-4 col-xs-4 hidden-sm hidden-xs"><a class="ellipsed" href="">{{ app.description }}</a></td>
-                        <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsed" href="">{{ app.clientId }}</a></td>
-                        <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsed" href="">{{ app.url }}</a></td>
-                        <td class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs hidden-md"><a href="">{{ app.changeDate | date :'dd-MMM-yyyy h:mm a'}}</a></td>
+                        <td class="col-lg-2 col-xs-2"><a href=""><strong>{{ app.name }}</strong></a></td>
+                        <td class="col-lg-4 col-xs-4 hidden-sm hidden-xs"><a class="ellipsis ellipsis-md" href="" dotdotdot>{{ app.description }}</a></td>
+                        <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsis ellipsis-xs" href="" dotdotdot>{{ app.clientId }}</a></td>
+                        <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsis ellipsis-xs" href="" dotdotdot>{{ app.url }}</a></td>
+                        <td class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs hidden-md"><a class="text-nowrap" href="">{{ app.changeDate | date :'dd-MMM-yyyy h:mm a'}}</a></td>
                     </tr>
                 </tbody>
             </table>
