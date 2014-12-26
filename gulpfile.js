@@ -20,9 +20,6 @@ var sass        = require("gulp-sass");
 
 //------------------------- Browser Sync --------------------------------
 
-/**
- * Wait for jekyll-build, then launch the Server
- */
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
@@ -41,22 +38,19 @@ gulp.task('browser-sync-reload', function() {
 /**
  * Install bower dependencies
  */
-gulp.task('bower-install', ['bower-clean-cache', 'bower-rm'], function(){
-    return bower.commands.install([], {save: true}, {});
+gulp.task('bower-install', ['bower-rm'], function(cb){
+    return bower().on('error', function(err) {
+        console.log(err);
+        cb();
+    });
 });
 
-/**
- * Clean bower cache
- */
-gulp.task('bower-clean-cache', function(){
-    return bower.commands.cache.clean([], {}, {});
-});
 
 /**
  *  Remove all bower dependencies
  */
 gulp.task('bower-rm', function(){
-    return del.sync('web/components');
+    return del.sync('assets/components');
 });
 
 //------------------------- Watch --------------------------------
@@ -70,7 +64,7 @@ gulp.task('watch', function () {
 });
 
 //-------------------------- Test ----------------------------------
-gulp.task("server", factory.testServer());
+gulp.task("server",['sass'], factory.testServer());
 gulp.task("server-close", factory.testServerClose());
 gulp.task("test:webdrive_update", factory.webdriveUpdate());
 gulp.task("test:e2e:core", ["test:webdrive_update"], factory.testE2EAngular({
@@ -84,10 +78,10 @@ gulp.task("test:e2e", function (cb) {
 //------------------------- Deployment --------------------------------
 var options = {
             prod: {
-                remoteUrl: "git@github.com:Rise-Vision/dev-hub-prod.git"
+                remoteUrl: "https://github.com/Rise-Vision/dev-hub-prod.git"
             },
             stage: {
-                remoteUrl: "git@github.com:Rise-Vision/dev-hub-stage.git"
+                remoteUrl: "https://github.com/Rise-Vision/dev-hub-stage.git"
             }
         };
 
@@ -129,13 +123,15 @@ gulp.task("sass", function () {
 /**
  * Do a bower clean install
  */
-gulp.task('bower-clean-install', ['bower-rm', 'bower-clean-cache','bower-install']);
+gulp.task('bower-clean-install', ['bower-rm', 'bower-install']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+
+gulp.task('build', ['sass', 'cname']);
 
 
 
