@@ -1,8 +1,8 @@
-# Rise Vision Developer Hub
+# Rise Vision Developer Hub [![Circle CI](https://circleci.com/gh/Rise-Vision/developer-hub.svg?style=svg)](https://circleci.com/gh/Rise-Vision/developer-hub)
 
 ## Introduction
 
-Rise vision developer hub is an application built with [AngularJs](https://angularjs.org/) its plugin and our [Common-header](https://github.com/Rise-Vision/common-header) to provide a space where developer can manage their apps, have access to developer documentation and play with our developer tools.
+Rise Vision Developer Hub is an application built with [AngularJs](https://angularjs.org/) its plugin and our [Common-header](https://github.com/Rise-Vision/common-header) to provide a space where developer can manage their apps, have access to developer documentation and play with our developer tools.
 
 Project Name works in conjunction with [Rise Vision](http://www.risevision.com), the [digital signage management application](http://rva.risevision.com/) that runs on [Google Cloud](https://cloud.google.com).
 
