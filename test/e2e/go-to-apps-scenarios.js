@@ -38,8 +38,5 @@
             expect(buttonElement.isPresent()).to.eventually.be.true;
             assert.eventually.equal(buttonElement.getText(),"Register An App");
         });
-
-
-
     });
 })();
