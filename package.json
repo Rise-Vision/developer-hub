@@ -4,7 +4,9 @@
     "description": "RiseVision Developer Hub",
     "main": "gulpfile.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "ci-build": "gulp build",
+        "ci-deploy": "gulp deploy --clean",
+        "test": "gulp test:e2e"
     },
     "author": "rodrigopavezi <rodrigopavezi@gmail.com>",
     "license": "GNU",
