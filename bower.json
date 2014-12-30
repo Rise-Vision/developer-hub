@@ -13,7 +13,7 @@
     "bootstrap": "~3.2.0",
     "jquery": "~1.11.1",
     "rv-common-style": "https://github.com/Rise-Vision/common-style.git#v1.1.4",
-    "rise-vision-common-header": "https://github.com/Rise-Vision/common-header.git",
+    "rise-vision-common-header": "https://github.com/Rise-Vision/common-header.git#v1.0.0",
     "angular-ui-flow-manager": "https://github.com/Rise-Vision/angular-ui-flow-manager.git",
     "angular-ui-router": "0.2.11",
     "angular-translate": "2.4.1",
