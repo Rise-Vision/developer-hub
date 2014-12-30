@@ -12,14 +12,16 @@
   "dependencies": {
     "bootstrap": "~3.2.0",
     "jquery": "~1.11.1",
-    "rv-common-style": "https://github.com/Rise-Vision/common-style.git#v1.0.0",
+    "rv-common-style": "https://github.com/Rise-Vision/common-style.git#v1.1.4",
     "rise-vision-common-header": "https://github.com/Rise-Vision/common-header.git#v1.0.0",
     "angular-ui-flow-manager": "https://github.com/Rise-Vision/angular-ui-flow-manager.git",
     "angular-ui-router": "0.2.11",
     "angular-translate": "2.4.1",
     "angular-bootstrap": "~0.11.0",
     "rv-loading": "https://github.com/Rise-Vision/rv-loading.git",
-    "angular-google-analytics": "https://github.com/Rise-Vision/angular-google-analytics.git"
+    "angular-google-analytics": "https://github.com/Rise-Vision/angular-google-analytics.git",
+    "jQuery.dotdotdot": "https://github.com/BeSite/jQuery.dotdotdot.git",
+    "angular-dotdotdot": "https://github.com/Rise-Vision/angular-dotdotdot.git"
   },
   "devDependencies": {
     "JSONedit": "~0.1.0"
