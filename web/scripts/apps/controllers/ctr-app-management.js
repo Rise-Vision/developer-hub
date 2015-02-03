@@ -11,6 +11,7 @@ angular.module("risevision.developer.hub")
         $scope.loadingComplete = false;
         $scope.sortReverse = false;
         var _id = "";
+        var promises = [];
 
 
         $scope.sortBy = function(category){
@@ -44,22 +45,20 @@ angular.module("risevision.developer.hub")
                     $scope.loadingComplete = true;
                 });
 
-
+            promises[promises.length] = listAppsResult;
+            $loading.stopSpinnerAfterPromise("rv-dev-hub-apps-loader", promises);
         }
 
+
        var getCompleteApp = function () {
-           var promises = [];
+
             for(var key in $scope.apps){
                 var app = $scope.apps[key];
                 promises[promises.length] = appCompany(app);
                 promises[promises.length] = appActivity(app);
             }
 
-            $loading.stopSpinnerAfterPromise("rv-dev-hub-apps-loader", promises);
         }
-
-
-
 
         $scope.$watch(function () { return uiFlowManager.getStatus(); },
             function (newStatus){
