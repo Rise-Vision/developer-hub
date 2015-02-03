@@ -6,12 +6,13 @@ angular.module("risevision.developer.hub")
     .factory("appCompany", ["$q","DevHubCache","getCompany", function($q, DevHubCache,getCompany) {
         return function(app) {
             var deferred = $q.defer();
-            var companyFromCache = DevHubCache.get("company-"+app.companyId);
+            var cacheId = "company-"+app.companyId;
+            var companyFromCache = DevHubCache.get(cacheId);
             if(!companyFromCache) {
                 return getCompany(app.companyId)
                     .then(function (company) {
                         app.company = company;
-                        DevHubCache.put("company-"+app.companyId,company);
+                        DevHubCache.put(cacheId, company);
 
                         deferred.resolve(true);
                     }, function (errorResult) {
