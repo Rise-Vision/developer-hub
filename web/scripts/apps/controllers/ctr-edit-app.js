@@ -4,10 +4,12 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("EditAppController",
-    ["$scope", "$state", "$stateParams", "$timeout", "getApp", "updateApp", "deleteApp", "$log", "$loading", "errorInfo", "$modal", function($scope,$state, $stateParams, $timeout, getApp, updateApp, deleteApp ,$log, $loading, errorInfo, $modal){
+    ["$scope", "$state", "$stateParams", "$timeout", "getApp", "updateApp", "deleteApp", "$log", "$loading", "errorInfo", "$modal", "appActivity", "appCompany", function($scope,$state, $stateParams, $timeout, getApp, updateApp, deleteApp ,$log, $loading, errorInfo, $modal, appActivity, appCompany){
 
         var loadApp = getApp($stateParams.id).then(function (app) {
             $scope.app = app;
+            appActivity(app);
+            appCompany(app);
         });
 
         $loading.stopSpinnerAfterPromise("rv-dev-hub-app-loader", loadApp);
