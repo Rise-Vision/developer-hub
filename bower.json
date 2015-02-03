@@ -30,7 +30,9 @@
   },
   "resolutions": {
     "jquery": "~1.11.1",
-    "angular": ">=1"
+    "angular": ">=1",
+    "ng-gapi-loader": "feature/monitoring_api",
+    "ng-core-api-client": "feature/monitoring-activity"
   },
   "homepage": "https://github.com/Rise-Vision/developer-hub",
   "authors": [
