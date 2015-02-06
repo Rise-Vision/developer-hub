@@ -61,7 +61,7 @@
                     </div>
                     <div class="col-md-2 col-xs-2">
                         <label for="appAverageCallsField" id="appAverageCallsLabel">{{'APP_AVERAGE_CALLS' | translate}}</label>
-                        <input type="datetime" ng-disabled="true" class="form-control" id="appAverageCallsField" name="appAverageCallsField" ng-model="app.activity.avgCallsPerDay">
+                        <input type="datetime" ng-disabled="true" class="form-control" id="appAverageCallsField" name="appAverageCallsField" value="{{ app.activity.avgCallsPerDay | number : 2}}">
                     </div>
                 </div>
             </div>
