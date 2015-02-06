@@ -23,7 +23,7 @@
     "jQuery.dotdotdot": "https://github.com/BeSite/jQuery.dotdotdot.git",
     "angular-dotdotdot": "https://github.com/Rise-Vision/angular-dotdotdot.git",
     "ng-gapi-loader": "https://github.com/Rise-Vision/ng-gapi-loader.git",
-    "ng-core-api-client": "https://github.com/rodrigopavezi/ng-core-api-client.git"
+    "ng-core-api-client": "https://github.com/Rise-Vision/ng-core-api-client.git"
   },
   "devDependencies": {
     "JSONedit": "~0.1.0"
