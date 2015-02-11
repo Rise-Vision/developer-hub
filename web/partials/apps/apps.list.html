@@ -36,9 +36,9 @@
                 <thead>
                     <tr>
                         <th class="col-lg-2 col-xs-2">
-                            <a href="" ng-click="sortBy('companyName')">{{'APP_COMPANY_NAME' | translate}}
+                            <a href="" ng-click="sortBy('company.companyName')">{{'APP_COMPANY_NAME' | translate}}
                                 <span>
-                                  <i ng-if="sortByCat == 'companyName'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                                  <i ng-if="sortByCat == 'company.companyName'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
@@ -57,23 +57,23 @@
                             </a>
                         </th>
                         <th class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs">
-                            <a href="" ng-click="sortBy('firstCall')">{{'APP_FIRST_CALL' | translate}}
+                            <a href="" ng-click="sortBy('activity.firstCall')">{{'APP_FIRST_CALL' | translate}}
                                 <span>
-                                  <i ng-if="sortByCat == 'firstCall'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                                  <i ng-if="sortByCat == 'activity.firstCall'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
                         <th class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs">
-                            <a href="" ng-click="sortBy('lastCall')">{{'APP_LAST_CALL' | translate}}
+                            <a href="" ng-click="sortBy('activity.lastCall')">{{'APP_LAST_CALL' | translate}}
                                 <span>
-                                  <i ng-if="sortByCat == 'lastCall'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                                  <i ng-if="sortByCat == 'activity.lastCall'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
                         <th class="col-lg-1 col-xs-1 text-right hidden-xs">
-                            <a href="" ng-click="sortBy('avgCallsPerDay')">{{'APP_AVERAGE_CALLS' | translate}}
+                            <a href="" ng-click="sortBy('activity.avgCallsPerDay')">{{'APP_AVERAGE_CALLS' | translate}}
                                 <span>
-                                  <i ng-if="sortByCat == 'avgCallsPerDay'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                                  <i ng-if="sortByCat == 'activity.avgCallsPerDay'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
