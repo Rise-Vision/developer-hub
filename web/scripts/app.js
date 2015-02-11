@@ -96,5 +96,5 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
         $translateProvider.preferredLanguage('en');
     }]);
 angular.module("risevision.common.config")
-    .value("MONITORING_SERVICE_URL", "http://monitoring.rvaserver2.appspot.com/_ah/api");
+    .value("MONITORING_SERVICE_URL", "http://monitoring-dot-rvaserver2.appspot.com/_ah/api");
 ;
