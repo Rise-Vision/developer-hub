@@ -56,14 +56,14 @@
                                 </span>
                             </a>
                         </th>
-                        <th class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs">
+                        <th class="col-lg-2 col-xs-2 hidden-sm hidden-xs">
                             <a href="" ng-click="sortBy('activity.firstCall')">{{'APP_FIRST_CALL' | translate}}
                                 <span>
                                   <i ng-if="sortByCat == 'activity.firstCall'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
-                        <th class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs">
+                        <th class="col-lg-2 col-xs-2 hidden-sm hidden-xs">
                             <a href="" ng-click="sortBy('activity.lastCall')">{{'APP_LAST_CALL' | translate}}
                                 <span>
                                   <i ng-if="sortByCat == 'activity.lastCall'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
@@ -84,8 +84,8 @@
                         <td class="col-lg-2 col-xs-2"><a href=""><strong>{{ app.company.name }}</strong></a></td>
                         <td class="col-lg-3 col-xs-3"><a href=""><strong>{{ app.name }}</strong></a></td>
                         <td class="col-lg-2 col-xs-2 hidden-sm hidden-xs hidden-md"><a class="ellipsis ellipsis-xd" href="" dotdotdot>{{ app.description }}</a></td>
-                        <td class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.firstCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
-                        <td class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.lastCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
+                        <td class="col-lg-2 col-xs-2hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.firstCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
+                        <td class="col-lg-2 col-xs-2 hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.lastCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
                         <td class="col-lg-1 col-xs-1 text-right hidden-xs"><a class="text-nowrap" href="">{{ app.activity.avgCallsPerDay | number : 2}}</a></td>
                     </tr>
                 </tbody>
