@@ -1,5 +1,5 @@
 "use strict";
-angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app", "ui.bootstrap", "risevision.common.loading", "risevision.common.apis","risevision.common.core.endpoint","risevision.google-analytics", "dotdotdot-angular"])
+angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app", "ui.bootstrap", "risevision.common.loading", "risevision.common.apis","risevision.common.core.endpoint","risevision.google-analytics", "dotdotdot-angular", "risevision.common.monitoring.activity"])
     .config(["uiStatusDependencies", function (uiStatusDependencies) {
         uiStatusDependencies.addDependencies({
             "hasManagementRoles": "registerdAsRiseVisionUser",
@@ -32,6 +32,9 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             return deferred.promise;
         };
     }])
+    .factory('DevHubCache', function ($cacheFactory) {
+        return $cacheFactory('DevHubCache');
+    })
     .config(['$translateProvider', function ($translateProvider) {
         $translateProvider.translations('en', {
             'RV_DEVELOPER_HUB': 'Rise Vision Developer Hub',
@@ -48,6 +51,11 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             'APPS': 'Apps',
             'APP_REGISTRATION': 'App Registration',
             'APP': 'App',
+            'APP_COMPANY_NAME': 'Company',
+            'APP_CREATED': 'Registered',
+            'APP_FIRST_CALL': 'First Call',
+            'APP_LAST_CALL': 'Last Call',
+            'APP_AVERAGE_CALLS': 'AVG Calls',
             'REGISTER_AN_APP': 'Register An App',
             'APP_NO_APP_YET_MESSAGE': "You haven't registered any apps yet",
             'APP_ACTION': 'ACTION',
@@ -87,3 +95,6 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
 
         $translateProvider.preferredLanguage('en');
     }]);
+angular.module("risevision.common.config")
+    .value("MONITORING_SERVICE_URL", "https://monitoring-dot-rvaserver2.appspot.com/_ah/api");
+;

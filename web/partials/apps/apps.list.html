@@ -36,37 +36,44 @@
                 <thead>
                     <tr>
                         <th class="col-lg-2 col-xs-2">
+                            <a href="" ng-click="sortBy('company.companyName')">{{'APP_COMPANY_NAME' | translate}}
+                                <span>
+                                  <i ng-if="sortByCat == 'company.companyName'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                                </span>
+                            </a>
+                        </th>
+                        <th class="col-lg-3 col-xs-3">
                             <a href="" ng-click="sortBy('name')">{{'APP_NAME' | translate}}
-                                 <span>
+                                <span>
                                   <i ng-if="sortByCat == 'name'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
-                        <th class="col-lg-4 col-xs-4 hidden-sm hidden-xs">
+                        <th class="col-lg-2 col-xs-2 hidden-sm hidden-xs hidden-md">
                             <a href="" ng-click="sortBy('description')">{{'APP_DESCRIPTION' | translate}}
-                                 <span>
+                                <span>
                                   <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
-                        <th class="col-lg-2 col-xs-2 hidden-xs">
-                            <a href="" ng-click="sortBy('clientId')">{{'APP_CLIENT_ID' | translate}}
-                                 <span>
-                                  <i ng-if="sortByCat == 'clientId'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                        <th class="col-lg-2 col-xs-2 hidden-sm hidden-xs">
+                            <a href="" ng-click="sortBy('activity.firstCall')">{{'APP_FIRST_CALL' | translate}}
+                                <span>
+                                  <i ng-if="sortByCat == 'activity.firstCall'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
-                        <th class="col-lg-2 col-xs-2 hidden-xs">
-                            <a href="" ng-click="sortBy('url')">{{'APP_URL' | translate}}
-                                 <span>
-                                  <i ng-if="sortByCat == 'url'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                        <th class="col-lg-2 col-xs-2 hidden-sm hidden-xs">
+                            <a href="" ng-click="sortBy('activity.lastCall')">{{'APP_LAST_CALL' | translate}}
+                                <span>
+                                  <i ng-if="sortByCat == 'activity.lastCall'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
-                        <th class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs hidden-md">
-                            <a href="" ng-click="sortBy('changeDate')">{{'APP_MODIFIED' | translate}}
-                                 <span>
-                                  <i ng-if="sortByCat == 'changeDate'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                        <th class="col-lg-1 col-xs-1 text-right hidden-xs">
+                            <a href="" ng-click="sortBy('activity.avgCallsPerDay')">{{'APP_AVERAGE_CALLS' | translate}}
+                                <span>
+                                  <i ng-if="sortByCat == 'activity.avgCallsPerDay'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                                 </span>
                             </a>
                         </th>
@@ -74,11 +81,12 @@
                 </thead>
                 <tbody>
                     <tr ng-click="editApp(app.id)" ng-repeat="app in apps | orderBy:sortByCat:sortReverse">
-                        <td class="col-lg-2 col-xs-2"><a href=""><strong>{{ app.name }}</strong></a></td>
-                        <td class="col-lg-4 col-xs-4 hidden-sm hidden-xs"><a class="ellipsis ellipsis-md" href="" dotdotdot>{{ app.description }}</a></td>
-                        <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsis ellipsis-xs" href="" dotdotdot>{{ app.clientId }}</a></td>
-                        <td class="col-lg-2 col-xs-2 hidden-xs"><a class="ellipsis ellipsis-xs" href="" dotdotdot>{{ app.url }}</a></td>
-                        <td class="col-lg-2 col-xs-2 text-right hidden-sm hidden-xs hidden-md"><a class="text-nowrap" href="">{{ app.changeDate | date :'dd-MMM-yyyy h:mm a'}}</a></td>
+                        <td class="col-lg-2 col-xs-2"><a href=""><strong>{{ app.company.name }}</strong></a></td>
+                        <td class="col-lg-3 col-xs-3"><a href=""><strong>{{ app.name }}</strong></a></td>
+                        <td class="col-lg-2 col-xs-2 hidden-sm hidden-xs hidden-md"><a class="ellipsis ellipsis-xd" href="" dotdotdot>{{ app.description }}</a></td>
+                        <td class="col-lg-2 col-xs-2hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.firstCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
+                        <td class="col-lg-2 col-xs-2 hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.lastCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
+                        <td class="col-lg-1 col-xs-1 text-right hidden-xs"><a class="text-nowrap" href="">{{ app.activity.avgCallsPerDay | number : 2}}</a></td>
                     </tr>
                 </tbody>
             </table>

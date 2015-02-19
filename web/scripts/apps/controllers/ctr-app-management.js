@@ -4,13 +4,15 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("AppManagementController",
-    ["$scope", "$state","listApps", "userState", "$loading", "uiFlowManager", function($scope, $state, listApps, userState, $loading, uiFlowManager){
+    ["$scope", "$state","listApps", "appActivity", "appCompany","userState", "$loading", "uiFlowManager","$log", function($scope, $state, listApps, appActivity, appCompany,userState, $loading, uiFlowManager, $log){
 
         $scope.apps = [];
         $scope.showNoAppMessage = true;
         $scope.loadingComplete = false;
         $scope.sortReverse = false;
         var _id = "";
+
+
 
         $scope.sortBy = function(category){
             $scope.sortByCat = category;
@@ -32,29 +34,30 @@ angular.module("risevision.developer.hub")
         };
 
         var getApps = function(selectedCompanyId) {
-            var listAppsResult = listApps(selectedCompanyId)
+            $loading.start("rv-dev-hub-apps-loader");
+            var listAppsResult = listApps()
                 .then(function (apps) {
                     $scope.apps = apps;
+                    getCompleteApp();
                     $scope.loadingComplete = true;
                     toogleMessageAndTable();
-                    parseDate();
+
                 }, function () {
                     $scope.loadingComplete = true;
+                    $loading.stop("rv-dev-hub-apps-loader");
                 });
-
-
-
-            $loading.stopSpinnerAfterPromise("rv-dev-hub-apps-loader", listAppsResult);
         }
 
-        // Parse date so angular can format it.
-        var parseDate = function() {
-            for(var key in $scope.apps){
+
+       var getCompleteApp = function () {
+           var promises = [];
+           for(var key in $scope.apps){
                 var app = $scope.apps[key];
-                if(app.changeDate){
-                    app.changeDate = Date.parse(app.changeDate);
-                }
+                promises[promises.length] = appCompany(app);
+                promises[promises.length] = appActivity(app);
             }
+
+           $loading.stopSpinnerAfterPromise("rv-dev-hub-apps-loader", promises);
         }
 
         $scope.$watch(function () { return uiFlowManager.getStatus(); },
@@ -63,7 +66,6 @@ angular.module("risevision.developer.hub")
                     console.log("Status: "+ newStatus)
 
                     if(newStatus === "hasManagementRoles") {
-                        console.log("HERE");
                         uiFlowManager.cancelValidation();
                         uiFlowManager.invalidateStatus("canAccessList");
                         $state.go("apps.withoutPermission");
@@ -72,10 +74,11 @@ angular.module("risevision.developer.hub")
                         $state.go("apps.add");
                     }else if (newStatus === "canEditApps"){
                         uiFlowManager.invalidateStatus("canAccessList");
-                       $state.go("apps.edit", {id: _id});
+                        $state.go("apps.edit", {id: _id});
                     }
                 }
             });
+
 
         $scope.$watch(function () { return userState.getSelectedCompanyId(); },
             function (selectedCompanyId) {

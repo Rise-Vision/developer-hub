@@ -163,3 +163,8 @@
 .methodTitle {
   margin-bottom: 20px;
   margin-top: 10px; }
+
+@media screen and (max-width: 1400px) {
+  .appActivityDetails div {
+    position: static;
+    width: auto; } }
