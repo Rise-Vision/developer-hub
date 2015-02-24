@@ -14,6 +14,7 @@ deployment:
     branch: /(feature|fix|chore).*/
     commands:
       - git checkout stage
+      - git pull origin stage
       - git merge $CIRCLE_BRANCH -m "Merged commit $CIRCLE_SHA1 into $CIRCLE_BRANCH"
       - git push origin stage
   staging:
