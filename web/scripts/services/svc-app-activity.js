@@ -23,6 +23,8 @@ angular.module("risevision.developer.hub")
                             $log.debug("Error: " + errorResult);
                             deferred.reject(errorResult);
                         });
+                } else{
+                    deferred.resolve(true);
                 }
             }else{
                 app.activity = activityFromCache;

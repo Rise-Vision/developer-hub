@@ -44,7 +44,7 @@ angular.module("risevision.developer.hub")
         $scope.deleteApp = function (id) {
 
             var deleteConfirmationModalInstance = $modal.open({
-                templateUrl: "partials/apps/delete_confirmation_modal.html",
+                templateUrl: "/partials/apps/delete_confirmation_modal.html",
                 controller: function ($scope, $modalInstance) {
 
                     $scope.ok = function () {

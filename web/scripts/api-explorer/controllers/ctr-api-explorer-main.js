@@ -9,11 +9,11 @@ angular.module("risevision.developer.hub")
 
             $scope.documentationUrl = "http://help.risevision.com/#/developer/core-api/"
 
-            $http.get('data/descriptions.json').success (function(data) {
+            $http.get('/data/descriptions.json').success (function(data) {
                 $rootScope.descriptions = data;
             });
 
-            $http.get('data/metatags.json').success (function(data) {
+            $http.get('/data/metatags.json').success (function(data) {
                 $rootScope.metatag = data["api-explorer"];
             });
 

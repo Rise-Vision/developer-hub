@@ -9,7 +9,7 @@ angular.module("risevision.developer.hub")
 
         $scope.info = function() {
             $modal.open({
-                templateUrl: 'partials/apps/client-id-info.html'
+                templateUrl: '/partials/apps/client-id-info.html'
             });
         };
 
