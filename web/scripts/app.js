@@ -9,6 +9,17 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
         });
         $locationProvider.html5Mode(true);
     }])
+    .run(['$rootScope', '$location', '$window', function($rootScope, $location, $window){
+        $rootScope
+            .$on('$stateChangeSuccess',
+            function(event){
+
+                if (!$window.ga)
+                    return;
+
+                $window.ga('send', 'pageview', { page: $location.path() });
+            });
+    }])
     .factory("hasManagementRoles", ["$q", "getUserProfile", "userState", "$log", function ($q, getUserProfile, userState, $log) {
         return function () {
             var deferred = $q.defer();
