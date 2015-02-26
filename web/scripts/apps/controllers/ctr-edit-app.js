@@ -12,7 +12,7 @@ angular.module("risevision.developer.hub")
             appCompany(app);
         });
 
-        $loading.stopSpinnerAfterPromise("rv-dev-hub-app-loader", loadApp);
+        //$loading.stopSpinnerAfterPromise("rv-dev-hub-app-loader", loadApp);
 
         $scope.save = function(app) {
 
