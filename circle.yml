@@ -21,7 +21,7 @@ deployment:
     branch: stage
     commands:
           - NODE_ENV=stage npm run ci-build
-          - rsync -rptz -e ssh --delete web devhub@developer.stage.risevision.com:/rise-front-end/developer-hub
+          - rsync -rptz -e ssh --delete web devhub@developer-stage.risevision.com:/rise-front-end/developer-hub
           - tar czvf dist.tar.gz web
   production:
       branch: master
