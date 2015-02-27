@@ -34,14 +34,14 @@ angular.module("risevision.developer.hub")
         };
 
         var getApps = function(selectedCompanyId) {
-            $loading.start("rv-dev-hub-apps-loader");
+            //$loading.start("rv-dev-hub-apps-loader");
             var listAppsResult = listApps()
                 .then(function (apps) {
                     $scope.apps = apps;
                     getCompleteApp();
                     $scope.loadingComplete = true;
                     toogleMessageAndTable();
-
+                    $loading.stop("rv-dev-hub-apps-loader");
                 }, function () {
                     $scope.loadingComplete = true;
                     $loading.stop("rv-dev-hub-apps-loader");
@@ -57,7 +57,7 @@ angular.module("risevision.developer.hub")
                 promises[promises.length] = appActivity(app);
             }
 
-           $loading.stopSpinnerAfterPromise("rv-dev-hub-apps-loader", promises);
+           //$loading.stopSpinnerAfterPromise("rv-dev-hub-apps-loader", promises);
         }
 
         $scope.$watch(function () { return uiFlowManager.getStatus(); },

@@ -1,12 +1,24 @@
 "use strict";
 angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.common.header","JSONedit", "pascalprecht.translate", "risevision.common.app", "ui.bootstrap", "risevision.common.loading", "risevision.common.apis","risevision.common.core.endpoint","risevision.google-analytics", "dotdotdot-angular", "risevision.common.monitoring.activity"])
-    .config(["uiStatusDependencies", function (uiStatusDependencies) {
+    .config(["uiStatusDependencies","$locationProvider", function (uiStatusDependencies, $locationProvider) {
         uiStatusDependencies.addDependencies({
             "hasManagementRoles": "registerdAsRiseVisionUser",
             "canAddApps": "hasManagementRoles",
             "canEditApps": "hasManagementRoles",
             "canAccessList": ""
         });
+        $locationProvider.html5Mode(true);
+    }])
+    .run(['$rootScope', '$location', '$window', function($rootScope, $location, $window){
+        $rootScope
+            .$on('$stateChangeSuccess',
+            function(event){
+
+                if (!$window.ga)
+                    return;
+
+                $window.ga('send', 'pageview', { page: $location.path() });
+            });
     }])
     .factory("hasManagementRoles", ["$q", "getUserProfile", "userState", "$log", function ($q, getUserProfile, userState, $log) {
         return function () {

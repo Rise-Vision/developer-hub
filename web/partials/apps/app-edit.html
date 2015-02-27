@@ -4,11 +4,12 @@
     </div>
 </div>
 
-<div rv-spinner
+<!--div rv-spinner
      rv-spinner-key="rv-dev-hub-app-loader"
      rv-spinner-start-active="1"
      rv-spinner-backdrop-class="spinner-backdrop"
-        ></div>
+        ></div-->
+
 <div class="row">
     <div class="col-md-12 col-xs-12">
         <form role="form" name="form" novalidate class="css-form">
@@ -78,7 +79,7 @@
                             {{'SAVE_BUTTON' | translate}} <i class="fa fa-white fa-check icon-right"></i>
                         </button>
                         <!-- Cancel -->
-                        <a href="#/list" class="btn btn-default btn-fixed-width">
+                        <a ui-sref="apps.list" class="btn btn-default btn-fixed-width">
                             {{'CANCEL_BUTTON' | translate}} <i class="fa fa-white fa-times icon-right"></i>
                         </a>
                     </div>

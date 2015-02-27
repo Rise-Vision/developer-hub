@@ -10,7 +10,7 @@
     "developer": {
         "title": "Rise Vision Developer Console | Digital signage developer resources",
         "description": "The Rise Vision Developer Console is a resource to help developers build applications and widgets with Rise Vision's APIs and open source code",
-        "content": "Rise Vision Developer Console",
+        "name": "Rise Vision Developer Console",
         "image": "https://s3.amazonaws.com/Store-Products/Meta/developer.png",
         "url": "http://developer.risevision.com"
     }

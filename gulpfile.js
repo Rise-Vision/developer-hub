@@ -16,14 +16,22 @@ var rename      = require("gulp-rename");
 var factory     = require("widget-tester").gulpTaskFactory;
 var runSequence = require("run-sequence");
 var sass        = require("gulp-sass");
+var modRewrite  = require('connect-modrewrite');
+
 
 
 //------------------------- Browser Sync --------------------------------
 
 gulp.task('browser-sync', function() {
     browserSync({
+        startPath: '/index.html',
         server: {
-            baseDir: 'web'
+            baseDir: 'web',
+            middleware: [
+                modRewrite([
+                    '!\\.\\w+$ /index.html [L]'
+                ])
+            ]
         },
         port: 8000
     });
