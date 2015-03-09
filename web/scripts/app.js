@@ -7,7 +7,7 @@ angular.module("risevision.developer.hub",["ui.router","ngRoute","risevision.com
             "canEditApps": "hasManagementRoles",
             "canAccessList": ""
         });
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(true).hashPrefix('!');
     }])
     .run(['$rootScope', '$location', '$window', function($rootScope, $location, $window){
         $rootScope
