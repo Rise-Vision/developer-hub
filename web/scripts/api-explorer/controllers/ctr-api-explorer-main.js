@@ -24,5 +24,4 @@ angular.module("risevision.developer.hub")
                     $log.debug("Error: " + errorResult.code + " - " + errorResult.message);
                 });
 
-            $loading.stopSpinnerAfterPromise("rv-dev-hub-api-explorer-loader", listResourcesResult);
     }]);
