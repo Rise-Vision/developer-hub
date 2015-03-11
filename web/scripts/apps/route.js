@@ -15,21 +15,21 @@ angular.module("risevision.developer.hub")
             })
             .state('apps.withoutPermission', {
                 url: '/apps/userWithoutPermission',
-                templateUrl: '/partials/apps/apps.withoutPermission.html'
+                templateUrl: 'partials/apps/apps.withoutPermission.html'
             })
             .state('apps.list', {
                 url: '/apps/list',
-                templateUrl: '/partials/apps/apps.list.html',
+                templateUrl: 'partials/apps/apps.list.html',
                 controller: 'AppManagementController'
             })
             .state('apps.add', {
                 url: '/apps/add',
-                templateUrl: '/partials/apps/app-form.html',
+                templateUrl: 'partials/apps/app-form.html',
                 controller: 'AddAppController'
             })
             .state('apps.edit', {
                 url: '/apps/edit/:id',
-                templateUrl: '/partials/apps/app-edit.html',
+                templateUrl: 'partials/apps/app-edit.html',
                 controller: 'EditAppController'
             })
     }]);
