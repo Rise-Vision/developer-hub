@@ -4,7 +4,8 @@
 "use strict";
 angular.module("risevision.developer.hub")
     .controller("EditAppController",
-    ["$scope", "$state", "$stateParams", "$timeout", "getApp", "updateApp", "deleteApp", "$log", "$loading", "errorInfo", "$modal", "appActivity", "appCompany", function($scope,$state, $stateParams, $timeout, getApp, updateApp, deleteApp ,$log, $loading, errorInfo, $modal, appActivity, appCompany){
+    ["$scope", "$state", "$stateParams", "$timeout", "getApp", "updateApp", "deleteApp", "$log", "$loading", "errorInfo", "$modal", "appActivity", "appCompany", "userState",
+    function($scope,$state, $stateParams, $timeout, getApp, updateApp, deleteApp ,$log, $loading, errorInfo, $modal, appActivity, appCompany, userState){
 
         var loadApp = getApp($stateParams.id).then(function (app) {
             $scope.app = app;

@@ -33,7 +33,8 @@ gulp.task('browser-sync', function() {
                 ])
             ]
         },
-        port: 8000
+        port: 8000,
+        open: false
     });
 });
 
@@ -140,7 +141,3 @@ gulp.task('bower-clean-install', ['bower-rm', 'bower-install']);
 gulp.task('default', ['browser-sync', 'watch']);
 
 gulp.task('build', ['sass', 'cname']);
-
-
-
-
