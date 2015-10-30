@@ -17,7 +17,7 @@
     "rv-common-svg": "https://github.com/Rise-Vision/common-svg.git",
     "jquery": "~1.11.2",
     "rv-common-style": "https://github.com/Rise-Vision/common-style.git#v1.3.19",
-    "rise-vision-common-header": "https://github.com/Rise-Vision/common-header.git#v1.7.0",
+    "rise-vision-common-header": "https://github.com/Rise-Vision/common-header.git#v1.6.3",
     "angular-ui-flow-manager": "https://github.com/Rise-Vision/angular-ui-flow-manager.git",
     "angular-ui-router": "0.2.11",
     "angular-translate": "2.5.2",
@@ -26,7 +26,6 @@
     "angular-google-analytics": "https://github.com/Rise-Vision/angular-google-analytics.git",
     "jQuery.dotdotdot": "https://github.com/BeSite/jQuery.dotdotdot.git",
     "angular-dotdotdot": "https://github.com/Rise-Vision/angular-dotdotdot.git",
-    "ng-gapi-loader": "https://github.com/Rise-Vision/ng-gapi-loader.git#v1.1.0",
     "ng-core-api-client": "https://github.com/Rise-Vision/ng-core-api-client.git"
   },
   "devDependencies": {},
