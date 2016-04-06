@@ -1,5 +1,5 @@
 "use strict";
-angular.module("risevision.developer.hub",["ui.router","risevision.common.header","ui.bootstrap","ui.bootstrap.tpls", "pascalprecht.translate", "risevision.common.app", "risevision.common.loading", "risevision.common.apis","risevision.common.core.endpoint","risevision.google-analytics", "dotdotdot-angular", "risevision.common.monitoring.activity"])
+angular.module("risevision.developer.hub",["ui.router","risevision.common.header","ui.bootstrap","ui.bootstrap.tpls", "pascalprecht.translate", "risevision.common.app", "risevision.common.loading", "risevision.common.apis","risevision.common.core.endpoint","risevision.google-analytics", "risevision.common.monitoring.activity"])
     .config(["uiStatusDependencies","$locationProvider", function (uiStatusDependencies, $locationProvider) {
         uiStatusDependencies.addDependencies({
             "hasManagementRoles": "registerdAsRiseVisionUser",

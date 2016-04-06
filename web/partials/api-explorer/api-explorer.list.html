@@ -24,7 +24,7 @@
                 <tbody>
                     <tr ng-click="explore(method.id)" ng-repeat="method in methods | orderBy:sortByCat:sortReverse">
                         <td class="col-lg-3 col-xs-3"><a href=""><strong>{{ method.id }}</strong></a></td>
-                        <td class="col-lg-8 col-xs-8 hidden-xs description-col"><a class="ellipsis ellipsis-md" href="" dotdotdot>{{ method.description }}</a></td>
+                        <td class="col-lg-8 col-xs-8 hidden-xs description-col"><a href="">{{ method.description }}</a></td>
                         <td class="col-lg-1 col-xs-1"><a href="#">{{ method.httpMethod }}</a></td>
                     </tr>
                 </tbody>
