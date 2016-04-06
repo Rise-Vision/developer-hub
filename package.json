@@ -24,7 +24,7 @@
         "chai-as-promised": "^4.1.1",
         "run-sequence": "^0.3.6",
         "widget-tester": "git://github.com/Rise-Vision/widget-tester.git",
-        "gulp-sass": "~0.7.1",
+        "gulp-sass": "2.2.0",
         "gulp-bower": "0.0.7",
         "connect-modrewrite": "0.7.11"
     },

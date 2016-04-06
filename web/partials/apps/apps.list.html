@@ -83,7 +83,7 @@
                     <tr ng-click="editApp(app.id)" ng-repeat="app in apps | orderBy:sortByCat:sortReverse">
                         <td class="col-lg-2 col-xs-2"><a href=""><strong>{{ app.company.name }}</strong></a></td>
                         <td class="col-lg-3 col-xs-3"><a href=""><strong>{{ app.name }}</strong></a></td>
-                        <td class="col-lg-2 col-xs-2 hidden-sm hidden-xs hidden-md"><a class="ellipsis ellipsis-xd" href="" dotdotdot>{{ app.description }}</a></td>
+                        <td class="col-lg-2 col-xs-2 hidden-sm hidden-xs hidden-md"><a href="">{{ app.description }}</a></td>
                         <td class="col-lg-2 col-xs-2hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.firstCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
                         <td class="col-lg-2 col-xs-2 hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.lastCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
                         <td class="col-lg-1 col-xs-1 text-right hidden-xs"><a class="text-nowrap" href="">{{ app.activity.avgCallsPerDay | number : 2}}</a></td>
