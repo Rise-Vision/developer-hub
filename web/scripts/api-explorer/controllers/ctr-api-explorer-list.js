@@ -18,6 +18,7 @@ angular.module("risevision.developer.hub")
                 function (resources) {
                     $scope.$watch(function () { return $rootScope.descriptions; },
                         function (descriptions) {
+                            $scope.methods = [];
                             for(var resourceKey in resources){
                                 for(var methodKey in resources[resourceKey].methods){
                                     var method = resources[resourceKey].methods[methodKey];
