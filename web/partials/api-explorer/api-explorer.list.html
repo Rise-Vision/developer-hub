@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12 col-xs-12">
-        <div class="content-box table-responsive">
+        <div class="panel table-responsive">
             <table class="table table--hover">
                 <thead class="table-header">
                     <tr class="table-header__row">
@@ -14,7 +14,7 @@
                         </th>
                         <th class="table-header__cell" ng-click="sortBy('httpMethod')">
                             {{'RESOURCE_METHOD' | translate}}
-                                <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
+                                <i ng-if="sortByCat == 'httpMethod'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                         </th>
                     </tr>
                 </thead>
