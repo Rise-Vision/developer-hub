@@ -31,62 +31,45 @@
                 <h3>{{'APP_NO_APP_YET_MESSAGE' | translate}}</h3>
             </div>
         </div>
-        <div class="content-box table-responsive" ng-show="loadingComplete && showAppTable">
-            <table class="table-2 table-hover">
-                <thead>
-                    <tr>
-                        <th class="col-lg-2 col-xs-2">
-                            <a href="" ng-click="sortBy('company.companyName')">{{'APP_COMPANY_NAME' | translate}}
-                                <span>
-                                  <i ng-if="sortByCat == 'company.companyName'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
-                                </span>
-                            </a>
+        <div class="panel table-responsive" ng-show="loadingComplete && showAppTable">
+            <table class="table table--hover">
+                <thead class="table-header">
+                    <tr class="table-header__row u_clickable">
+                        <th class="table-header__cell" ng-click="sortBy('company.companyName')">
+                            {{'APP_COMPANY_NAME' | translate}}
+                                <i ng-if="sortByCat == 'company.companyName'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                         </th>
-                        <th class="col-lg-3 col-xs-3">
-                            <a href="" ng-click="sortBy('name')">{{'APP_NAME' | translate}}
-                                <span>
+                        <th class="table-header__cell" ng-click="sortBy('name')">
+                            {{'APP_NAME' | translate}}
                                   <i ng-if="sortByCat == 'name'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
-                                </span>
-                            </a>
                         </th>
-                        <th class="col-lg-2 col-xs-2 hidden-sm hidden-xs hidden-md">
-                            <a href="" ng-click="sortBy('description')">{{'APP_DESCRIPTION' | translate}}
-                                <span>
+                        <th class="table-header__cell hidden-sm hidden-xs hidden-md" ng-click="sortBy('description')">
+                            {{'APP_DESCRIPTION' | translate}}
                                   <i ng-if="sortByCat == 'description'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
-                                </span>
-                            </a>
                         </th>
-                        <th class="col-lg-2 col-xs-2 hidden-sm hidden-xs">
-                            <a href="" ng-click="sortBy('activity.firstCall')">{{'APP_FIRST_CALL' | translate}}
-                                <span>
+                        <th class="table-header__cell hidden-sm hidden-xs" ng-click="sortBy('activity.firstCall')">
+                            {{'APP_FIRST_CALL' | translate}}
                                   <i ng-if="sortByCat == 'activity.firstCall'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
-                                </span>
-                            </a>
                         </th>
-                        <th class="col-lg-2 col-xs-2 hidden-sm hidden-xs">
-                            <a href="" ng-click="sortBy('activity.lastCall')">{{'APP_LAST_CALL' | translate}}
-                                <span>
+                        <th class="table-header__cell hidden-sm hidden-xs" ng-click="sortBy('activity.lastCall')">
+                            {{'APP_LAST_CALL' | translate}}
                                   <i ng-if="sortByCat == 'activity.lastCall'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
-                                </span>
-                            </a>
+                           
                         </th>
-                        <th class="col-lg-1 col-xs-1 text-right hidden-xs">
-                            <a href="" ng-click="sortBy('activity.avgCallsPerDay')">{{'APP_AVERAGE_CALLS' | translate}}
-                                <span>
-                                  <i ng-if="sortByCat == 'activity.avgCallsPerDay'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
-                                </span>
-                            </a>
+                        <th class="table-header__cell text-right hidden-xs" ng-click="sortBy('activity.avgCallsPerDay')">
+                            {{'APP_AVERAGE_CALLS' | translate}}                                  
+                                <i ng-if="sortByCat == 'activity.avgCallsPerDay'" class="fa" ng-class="{false: 'fa-long-arrow-up', true: 'fa-long-arrow-down'}[sortReverse]"></i>
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr ng-click="editApp(app.id)" ng-repeat="app in apps | orderBy:sortByCat:sortReverse">
-                        <td class="col-lg-2 col-xs-2"><a href=""><strong>{{ app.company.name }}</strong></a></td>
-                        <td class="col-lg-3 col-xs-3"><a href=""><strong>{{ app.name }}</strong></a></td>
-                        <td class="col-lg-2 col-xs-2 hidden-sm hidden-xs hidden-md"><a href="">{{ app.description }}</a></td>
-                        <td class="col-lg-2 col-xs-2hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.firstCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
-                        <td class="col-lg-2 col-xs-2 hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.lastCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
-                        <td class="col-lg-1 col-xs-1 text-right hidden-xs"><a class="text-nowrap" href="">{{ app.activity.avgCallsPerDay | number : 2}}</a></td>
+                <tbody class="table-body">
+                    <tr class="table-body__row" ng-click="editApp(app.id)" ng-repeat="app in apps | orderBy:sortByCat:sortReverse">
+                        <td class="table-body__cell"><a href=""><strong>{{ app.company.name }}</strong></a></td>
+                        <td class="table-body__cell"><a href=""><strong>{{ app.name }}</strong></a></td>
+                        <td class="table-body__cell hidden-sm hidden-xs hidden-md"><a href="">{{ app.description }}</a></td>
+                        <td class="table-body__cell hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.firstCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
+                        <td class="table-body__cell hidden-sm hidden-xs"><a class="text-nowrap" href="">{{ app.activity.lastCall | date :'dd-MMM-yyyy H:mm'}}</a></td>
+                        <td class="table-body__cell text-right hidden-xs"><a class="text-nowrap" href="">{{ app.activity.avgCallsPerDay | number : 2}}</a></td>
                     </tr>
                 </tbody>
             </table>
