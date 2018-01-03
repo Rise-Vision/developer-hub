@@ -1,3 +1,6 @@
+## DEPRECATED
+Use: https://github.com/Rise-Vision/risevision-documentation
+
 # Rise Vision Developer Hub [![Circle CI](https://circleci.com/gh/Rise-Vision/developer-hub.svg?style=svg)](https://circleci.com/gh/Rise-Vision/developer-hub)
 
 ## Introduction
