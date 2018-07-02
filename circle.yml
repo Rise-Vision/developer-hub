@@ -1,3 +1,6 @@
+machine:
+  node:
+    version: 8.1.4
 general:
   artifacts:
     - dist.tar.gz
